@@ -1,6 +1,5 @@
 +++
 title =  "Projects"
-in_search_index = true
 +++
 
 [imcheck](https://github.com/sh1457/imcheck) A python script CLI to verify the correctness of image formats such as PNG and JPEG 

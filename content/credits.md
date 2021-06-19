@@ -1,6 +1,5 @@
 +++
 title =  "Credits"
-in_search_index = true
 +++
 
 ## Favicon

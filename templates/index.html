@@ -2,16 +2,93 @@
 
 {% block content %}
 
-<h2>Hello</h2>
+{% set data = load_data(path="static/data/series.csv") %}
+
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+
+<div id="chart" class="container-lg min-w-screen mx-auto shadow-lg rounded"></div>
+
+<script type="text/javascript">
+const trace1 = {
+  x: [{% for rec in data.records %}"{{rec.0}}"{% if not loop.last%}, {% endif %}{% endfor %}],
+  y: [{% for rec in data.records %}{{rec.1}}{% if not loop.last%}, {% endif %}{% endfor %}],
+  type: 'scatter',
+  mode: 'lines+markers',
+  marker: {
+    size: 8,
+    opacity: 0.8
+  },
+  line: {
+    width: 1,
+    opacity: 0.6,
+    shape: 'spline'
+  },
+  name: 'Mind',
+};
+
+const trace2 = {
+  x: [{% for rec in data.records %}"{{rec.0}}"{% if not loop.last%}, {% endif %}{% endfor %}],
+  y: [{% for rec in data.records %}{{rec.2}}{% if not loop.last%}, {% endif %}{% endfor %}],
+  type: 'scatter',
+  mode: 'lines+markers',
+  marker: {
+    size: 8,
+    opacity: 0.8
+  },
+  line: {
+    width: 1,
+    opacity: 0.6,
+    shape: 'spline'
+  },
+  name: 'Body',
+};
+
+const data = [trace1, trace2];
+
+const layout = {
+  title: 'Activity counts',
+  xaxis: {
+    type: 'date',
+  },
+  yaxis: {
+    range: [0, 10],
+    showgrid: true
+  },
+  showlegend: true,
+  legend: {
+    x: 1,
+    xanchor: 'right',
+    y: 1
+  },
+  margin: {
+    l: 50,
+    r: 50,
+    b: 100,
+    t: 100,
+    pad: 4
+  },
+};
+
+Plotly.newPlot(
+  'chart',
+  data,
+  layout,
+  {
+    displayModeBar: false,
+    responsive: true,
+    static_plot: true
+  }
+);
+</script>
 
 <section>
-    <p>
-        I am Sujith and I usually go by the handle <mark class="highlight-handle">@sh1457</mark>.
-    </p>
-    <blockquote>
-        <p>The simplest things are often the most complicated.</p>
-        — <cite>Occam's Razor</cite>
-    </blockquote>
+  <p>
+    I am Sujith and I usually go by the handle <mark class="highlight-handle">@sh1457</mark>.
+  </p>
+  <blockquote>
+    <p>The simplest things are often the most complicated.</p>
+    — <cite>Occam's Razor</cite>
+  </blockquote>
 </section>
 
 {% endblock content %}
