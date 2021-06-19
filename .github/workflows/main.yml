@@ -1,8 +1,7 @@
 on:
   push:
     branches:
-      - master 
-  pull_request:
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,7 +9,7 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-      - name: 'Build only' 
+      - name: 'Build only'
         uses: shalzz/zola-deploy-action@master
         env:
           BUILD_DIR: .
