@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- <h1 class="title font-serif text-cyan-800 text-xl font-semibold">
+    {{ section.title }}
+</h1> -->
+
+{% for year, posts in section.pages | group_by(attribute="year") %}
+<ul class="flex flex-col bg-gray-200 border-gray-600 px-2 font-mono">
+    <h2 class="archive-year text-l">{{ year }}</h2>
+    {% for post in posts %}
+    <li class="bg-gray-300 border-gray-500 shadow-md">
+        <div class="flex-row">
+            <div>
+                <span class="text-gray-500 text-xs">{{ post.date | date(format='%d %B %Y') }} {{ post.content | wordcount / 200 | round }}min read</span>
+            </div>
+            <div>
+                <span class="title small text-l font-semibold hover:text-gray-400 hover:underline">
+                    <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
+                </span>
+            </div>
+            <div>
+                <span class="text-gray-700 text-sm line-clamp-1">
+                    {{ post.content | safe | striptags | truncate(length=150) }}
+                </span>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,91 @@
+{% import "macros/opengraph.html" as social -%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ config.description }}">
+    <meta name="author" content="{{ config.extra.author }}">
+    <meta name="keywords" content="{{ config.extra.keywords | join(sep=" , ") }}" />
+
+    {%- block og_preview -%}
+    {{ social::og_preview() }}
+    {%- endblock og_preview -%}
+
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <link rel="shortcut icon" type="image/jpg" href="{{ get_url(path="res/ico/Anton-Gerasimenko-Harry-Potter-Remembrall-2.ico", trailing_slash=false) | safe }}">
+    <link rel="stylesheet" href="{{ get_url(path="css/tailwind.css", trailing_slash=false) | safe }}">
+    {% block rss %}
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+    {% endblock %}
+    {% endblock head %}
+
+    <style>
+        #expand-menu:checked ~ #hamburger {
+            visibility: visible;
+        }
+    </style>
+    <script type="text/javascript">
+    function toggleMenu() {
+        var checkBox = document.getElementById("expand-menu");
+        var menu = document.getElementById("hamburger");
+        checkBox.checked = !checkBox.checked;
+    }
+    </script>
+</head>
+
+<body class="min-h-screen box-content bg-blue-300">
+    <header class="bg-black text-sm border-gray-500 flex flex-row justify-between space-x-2">
+        <div class="h-9 flex flex-row visible sm:invisble top-1 left-1">
+            <a href="/">
+                <img
+                    alt="Remembrall Glowing"
+                    class="object-cover h-9 w-auto rounded"
+                    src="{{ get_url(path="res/png/Remembrall-2-icon.png", trailing_slash=false) | safe }}"
+                />
+            </a>
+            <h1 class="border-gray-600 px-2 py-1 text-2xl font-semibold text-gray-300 hover:text-red-600">
+                <a href="/">{{ config.title }}</a>
+            </h1>
+        </div>
+        <nav class="h-7 visible sm:invisible px-2 py-1 space-x-1 order-last sm:order-none">
+            <input type="checkbox" id="expand-menu" class="hidden"/>
+            <button class="inline-block sm:hidden text-gray-300" onclick="toggleMenu();">
+                <svg class="h-6 w-6 stroke-current text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" stoke-width="2" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <div id="hamburger" class="absolute sm:relative bg-gray-300 sm:bg-transparent border-2 border-gray-500 sm:border-0 sm:border-transparent px-6 py-1 invisible sm:visible flex flex-col sm:flex-row sm:space-x-3 right-10 sm:right-0 z-10 sm:z-0 transition delay-75 ease-in-out">
+                {% for menu_link in config.extra.menu_links %}
+                {% set link_url = menu_link.url | replace(from="$BASE_URL", to=config.base_url) %}
+                <a class="block py-1 text-base font-semibold text-gray-300 hover:text-red-600 hover:underline"
+                href="{{ link_url | safe}} ">{{menu_link.name}}
+                </a>
+                {% endfor %}
+            </div>
+        </nav>
+    </header>
+    <div id="content" class="bg-gray-300 p-6">
+        {% block content %} {% endblock content %}
+    </div>
+    <footer class="bg-black text-xs text-gray-300 border-gray-500 px-1 flex flex-row space-x-2">
+        <!-- <div class="bg-gray-200 border-gray-700 p-2 space-x-1">
+            {% for social_link in config.extra.social_links %}
+            {% set link_url = social_link.url %}
+            <a target="_blank" href="{{ link_url | safe }}">{{social_link.title}}</a>
+            {% endfor %}
+        </div> -->
+        <p class="text-gray-300 border-gray-700 p-1 flex-grow">
+            © {{ config.title }} {{ now() | date(format="%Y") }}
+        </p>
+        <p class="text-gray-300 border-gray-700 p-1">
+            Powered by <a target="_blank" href="https://getzola.org/">Zola</a>
+        </p>
+    </footer>
+</body>
+
+</html>
