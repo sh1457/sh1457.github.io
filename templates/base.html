@@ -11,26 +11,13 @@
     <meta name="author" content="{{ config.extra.author }}" />
     <meta name="keywords" content="{{ config.extra.keywords | join(sep=', ') }}" />
 
-    {%- block og_preview -%}
-    {{ social::og_preview() }}
-    {%- endblock og_preview -%}
+    {%- block og_preview -%}{{ social::og_preview() }}{%- endblock og_preview -%}
 
-    <title>
-      {% block title %}
-      {{ config.title}}
-      {% endblock title %}
-    </title>
+    <title>{% block title %}{{ config.title}}{% endblock title %}</title>
 
-    <link rel="shortcut icon" type="image/jpg" href="{{ get_url(path="res/ico/Anton-Gerasimenko-Harry-Potter-Remembrall-2.ico", trailing_slash=false) | safe }}">
-
-    <link rel="stylesheet" href="{{ get_url(path="css/tailwind.css", trailing_slash=false) | safe }}">
-
-    {% block rss %}
-    <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) | safe }}">
-    {% endblock rss %}
-
-    {% endblock head %}
-
+    <link rel="shortcut icon" type="image/jpg" href="{{ get_url(path="res/ico/Anton-Gerasimenko-Harry-Potter-Remembrall-2.ico", trailing_slash=false) | safe
+    }}"> <link rel="stylesheet" href="{{ get_url(path="css/tailwind.css", trailing_slash=false) | safe }}"> {% block rss %}<link rel="alternate"
+    type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) | safe }}">{% endblock rss %} {% endblock head %}
     <style>
       #expand-menu:checked ~ #hamburger {
         visibility: visible;
@@ -47,19 +34,19 @@
   </head>
 
   <body class="box-border min-h-screen">
-    <header class="flex flex-row justify-between py-1 text-gray-200 bg-black">
+    <header class="flex flex-row justify-between pt-1 font-serif font-semibold text-gray-200 bg-black">
       <div class="flex visible sm:invisble">
         <a href="/">
-          <img alt="Remembrall Glowing" class="w-auto h-8 px-2 rounded" src="{{get_url(path="res/png/Remembrall-2-icon.png", trailing_slash=false) | safe}}" />
+          <img alt="Remembrall Glowing" class="w-auto h-8 p-1" src="{{ get_url(path="res/png/Remembrall-2-icon.png", trailing_slash=false) | safe }}" />
         </a>
-        <h1 class="font-serif text-lg font-semibold hover:text-red-600">
-          <a href="/">{{config.title}}</a>
+        <h1 class="text-md hover:text-red-600">
+          <a href="/">{{ config.title }}</a>
         </h1>
       </div>
-      <nav class="z-10 order-last visible pt-1 pr-2 sm:z-0 sm:invisible sm:order-none">
+      <nav class="z-10 order-last visible pr-1 sm:pr-2 sm:z-0 sm:invisible sm:order-none">
         <input type="checkbox" id="expand-menu" class="hidden" />
         <button class="inline-block sm:hidden" onclick="toggleMenu();">
-          <svg class="w-6 h-6 text-gray-200 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <svg class="w-8 h-8 text-gray-200 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path
               fill-rule="evenodd"
               stoke-width="2"
@@ -70,22 +57,16 @@
         </button>
         <div
           id="hamburger"
-          class="absolute right-0 flex flex-col invisible px-2 transition ease-in-out delay-75 bg-black border-gray-200 shadow-md sm:visible sm:relative top-10 sm:top-0 sm:right-0 sm:flex-row border-top-2 rounded-bl-md sm:border-0 sm:p-0 sm:space-x-4"
+          class="absolute right-0 flex flex-col invisible px-2 transition ease-in-out delay-75 bg-black border-gray-200 shadow-md sm:visible sm:relative sm:right-0 sm:flex-row border-top-2 rounded-bl-md sm:border-0 sm:p-0 sm:space-x-4"
         >
-          {% for menu_link in config.extra.menu_links %}
-          {% set link_url = menu_link.url | replace(from="$BASE_URL", to=config.base_url) %}
-          <a class="block py-2 text-base font-semibold text-gray-200 text-serif hover:text-red-600" href="{{ link_url | safe }}">
-            {{ menu_link.name }}
-          </a>
+          {% for menu_link in config.extra.menu_links %} {% set link_url = menu_link.url | replace(from="$BASE_URL", to=config.base_url) %}
+          <a class="block font-mono hover:text-red-600 sm:align-right" href="{{ link_url | safe }}">{{ menu_link.name }}</a>
           {% endfor %}
         </div>
       </nav>
     </header>
 
-    <div id="content" class="m-6">
-      {% block content %}
-      {% endblock content %}
-    </div>
+    <div id="content" class="w-4/5 mx-auto lg:w-3/5">{% block content %} {% endblock content %}</div>
 
     <footer class="flex flex-row px-1 space-x-2 text-xs text-gray-200 bg-black">
       <p class="flex-grow p-1 text-gray-300 border-gray-700">© {{ config.title }} {{ now() | date(format="%Y") }}</p>
