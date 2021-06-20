@@ -18,7 +18,7 @@ page_template = "page.html"
 # a header.
 # The default template can be overridden by creating an `anchor-link.html` file in the `templates` directory.
 # This value can be "left", "right" or "none".
-insert_anchor_links = "right"
+insert_anchor_links = "none"
 
 # If set to "true", the section pages will be in the search index. This is only used if
 # `build_search_index` is set to "true" in the Zola configuration file.
