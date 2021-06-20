@@ -2,113 +2,94 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    {% block head %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="{{ config.description }}" />
+    <meta name="author" content="{{ config.extra.author }}" />
+    <meta name="keywords" content="{{ config.extra.keywords | join(sep=', ') }}" />
 
-<head>
-  {% block head %}
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="{{config.description}}">
-  <meta name="author" content="{{config.extra.author}}">
-  <meta name="keywords" content="{{config.extra.keywords | join(sep=', ')}}" />
+    {%- block og_preview -%}
+    {{ social::og_preview() }}
+    {%- endblock og_preview -%}
 
-  {%- block og_preview -%}
-  {{ social::og_preview() }}
-  {%- endblock og_preview -%}
+    <title>
+      {% block title %}
+      {{ config.title}}
+      {% endblock title %}
+    </title>
 
-  <title>{% block title %}{{config.title}}{% endblock title %}</title>
-  <link
-    rel="shortcut icon"
-    type="image/jpg"
-    href="{{get_url(path="res/ico/Anton-Gerasimenko-Harry-Potter-Remembrall-2.ico", trailing_slash=false) | safe}}"
-  >
-  <link
-    rel="stylesheet"
-    href="{{get_url(path="css/tailwind.css", trailing_slash=false) | safe}}"
-  >
-  {% block rss %}
-  <link
-    rel="alternate"
-    type="application/atom+xml"
-    title="RSS"
-    href="{{get_url(path=" atom.xml", trailing_slash=false)}}"
-  >
-  {% endblock %}
-  {% endblock head %}
+    <link rel="shortcut icon" type="image/jpg" href="{{ get_url(path="res/ico/Anton-Gerasimenko-Harry-Potter-Remembrall-2.ico", trailing_slash=false) | safe }}">
 
-  <style>
-    #expand-menu:checked~#hamburger {
-      visibility: visible;
-    }
-  </style>
-  <script type="text/javascript">
-    function toggleMenu() {
-      var checkBox = document.getElementById("expand-menu");
-      var menu = document.getElementById("hamburger");
-      checkBox.checked = !checkBox.checked;
-    }
-  </script>
-</head>
+    <link rel="stylesheet" href="{{ get_url(path="css/tailwind.css", trailing_slash=false) | safe }}">
 
-<body class="min-h-screen box-border">
-  <header class="flex flex-row py-1 bg-black text-gray-200 justify-between">
-    <div class="flex visible sm:invisble">
-      <a href="/">
-        <img
-          alt="Remembrall Glowing"
-          class="px-2 h-8 w-auto rounded"
-          src="{{get_url(path="res/png/Remembrall-2-icon.png", trailing_slash=false) | safe}}"
-        />
-      </a>
-      <h1 class="text-2xl font-serif font-semibold hover:text-red-600">
-        <a href="/">{{config.title}}</a>
-      </h1>
-    </div>
-    <nav class="visible sm:invisible pr-2 pt-1 order-last sm:order-none">
-      <input type="checkbox" id="expand-menu" class="hidden" />
-      <button class="inline-block sm:hidden" onclick="toggleMenu();">
-        <svg
-          class="h-6 w-6 stroke-current text-gray-200"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor">
-          <path
-            fill-rule="evenodd"
-            stoke-width="2"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clip-rule="evenodd"
-          />
-        </svg>
-      </button>
-      <div
-        id="hamburger"
-        class="invisible sm:visible absolute sm:relative top-10 right-0 sm:top-0 sm:right-0 flex flex-col sm:flex-row bg-black border-top-2 border-gray-200 rounded-bl-md sm:border-0 px-2 sm:p-0 sm:space-x-4 transition delay-75 ease-in-out shadow-md">
-        {% for menu_link in config.extra.menu_links %}
-        {% set link_url = menu_link.url | replace(from="$BASE_URL", to=config.base_url) %}
-        <a class="block py-2 text-base text-serif font-semibold text-gray-200 hover:text-red-600"
-          href="{{link_url | safe}} ">{{menu_link.name}}
+    {% block rss %}
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) | safe }}">
+    {% endblock rss %}
+
+    {% endblock head %}
+
+    <style>
+      #expand-menu:checked ~ #hamburger {
+        visibility: visible;
+      }
+    </style>
+
+    <script type="text/javascript">
+      function toggleMenu() {
+        var checkBox = document.getElementById("expand-menu");
+        var menu = document.getElementById("hamburger");
+        checkBox.checked = !checkBox.checked;
+      }
+    </script>
+  </head>
+
+  <body class="box-border min-h-screen">
+    <header class="flex flex-row justify-between py-1 text-gray-200 bg-black">
+      <div class="flex visible sm:invisble">
+        <a href="/">
+          <img alt="Remembrall Glowing" class="w-auto h-8 px-2 rounded" src="{{get_url(path="res/png/Remembrall-2-icon.png", trailing_slash=false) | safe}}" />
         </a>
-        {% endfor %}
+        <h1 class="font-serif text-lg font-semibold hover:text-red-600">
+          <a href="/">{{config.title}}</a>
+        </h1>
       </div>
-    </nav>
-  </header>
-  <div id="content" class="p-4">
-    {% block content %} {% endblock content %}
-  </div>
-  <footer class="flex flex-row px-1 bg-black text-gray-200 text-xs space-x-2">
-    <!-- <div class="bg-gray-200 border-gray-700 p-2 space-x-1">
-                {% for social_link in config.extra.social_links %}
-                {% set link_url = social_link.url %}
-                <a target="_blank" href="{{ link_url | safe }}">{{social_link.title}}</a>
-                {% endfor %}
-            </div> -->
-    <p class="text-gray-300 border-gray-700 p-1 flex-grow">
-      © {{ config.title }} {{ now() | date(format="%Y") }}
-    </p>
-    <p class="text-gray-300 border-gray-700 p-1">
-      Powered by <a target="_blank" href="https://getzola.org/">Zola</a>
-    </p>
-  </footer>
-</body>
+      <nav class="z-10 order-last visible pt-1 pr-2 sm:z-0 sm:invisible sm:order-none">
+        <input type="checkbox" id="expand-menu" class="hidden" />
+        <button class="inline-block sm:hidden" onclick="toggleMenu();">
+          <svg class="w-6 h-6 text-gray-200 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              stoke-width="2"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <div
+          id="hamburger"
+          class="absolute right-0 flex flex-col invisible px-2 transition ease-in-out delay-75 bg-black border-gray-200 shadow-md sm:visible sm:relative top-10 sm:top-0 sm:right-0 sm:flex-row border-top-2 rounded-bl-md sm:border-0 sm:p-0 sm:space-x-4"
+        >
+          {% for menu_link in config.extra.menu_links %}
+          {% set link_url = menu_link.url | replace(from="$BASE_URL", to=config.base_url) %}
+          <a class="block py-2 text-base font-semibold text-gray-200 text-serif hover:text-red-600" href="{{ link_url | safe }}">
+            {{ menu_link.name }}
+          </a>
+          {% endfor %}
+        </div>
+      </nav>
+    </header>
 
+    <div id="content" class="m-6">
+      {% block content %}
+      {% endblock content %}
+    </div>
+
+    <footer class="flex flex-row px-1 space-x-2 text-xs text-gray-200 bg-black">
+      <p class="flex-grow p-1 text-gray-300 border-gray-700">© {{ config.title }} {{ now() | date(format="%Y") }}</p>
+      <p class="p-1 text-gray-300 border-gray-700">Powered by <a target="_blank" href="https://getzola.org/">Zola</a></p>
+    </footer>
+  </body>
 </html>

@@ -4,7 +4,7 @@ description = "My remembrall"
 sort_by = "date"
 weight = 0
 template = "blog.html"
-page_template = "blog-post.html"
+page_template = "page.html"
 
 # This sets the number of pages to be displayed per paginated page.
 # No pagination will happen if this isn't set or if the value is 0.
@@ -18,7 +18,7 @@ page_template = "blog-post.html"
 # a header.
 # The default template can be overridden by creating an `anchor-link.html` file in the `templates` directory.
 # This value can be "left", "right" or "none".
-#insert_anchor_links = "none"
+insert_anchor_links = "right"
 
 # If set to "true", the section pages will be in the search index. This is only used if
 # `build_search_index` is set to "true" in the Zola configuration file.

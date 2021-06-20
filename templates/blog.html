@@ -1,35 +1,28 @@
 {% extends "base.html" %}
-
 {% block content %}
-<!-- <h1 class="title font-serif text-cyan-800 text-xl font-semibold">
-    {{ section.title }}
-</h1> -->
-
 {% for year, posts in section.pages | group_by(attribute="year") %}
 <div class="flex flex-col space-y-2">
-    <h2 class="archive-year text-xl font-sans">{{year}}</h2>
-    <ul class="flex flex-col sm:flex-row pl-2 space-x-0 space-y-4 sm:space-x-4 sm:space-y-0">
-        {% for post in posts %}
-        <li class="bg-indigo-100 border-2 rounded-lg border-gray-400 shadow-md ">
-            <div class="flex flex-col p-2">
-                <div class="text-gray-500 text-xs justify-between">
-                    <span>{{post.date | date(format='%d %B %Y')}}</span>
-                    <span>{{post.reading_time}} min read</span>
-                </div>
-                <div>
-                    <span class="title small text-l font-semibold hover:text-gray-800 hover:underline">
-                        <a href="{{post.permalink | safe}}">{{post.title}}</a>
-                    </span>
-                </div>
-                <div>
-                    <span class="text-gray-700 text-sm">
-                        {{post.content | safe | striptags | truncate(length=150)}}
-                    </span>
-                </div>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
+  <h2 class="font-sans text-xl archive-year">{{year}}</h2>
+  <ul class="flex flex-col pl-2 space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+    {% for post in posts %}
+    <li class="bg-indigo-100 border-2 border-gray-400 rounded-lg shadow-md">
+      <div class="flex flex-col p-2">
+        <div class="flex justify-between text-xs text-gray-500">
+          <span>{{ post.date | date(format='%d %B %Y') }}</span>
+          <span>{{ post.reading_time }} min read</span>
+        </div>
+        <div>
+          <span class="font-semibold title small text-l hover:text-gray-800 hover:underline">
+            <a href="{{ post.permalink | safe }}">{{post.title}}</a>
+          </span>
+        </div>
+        <div>
+          <span class="text-sm text-gray-700">{{ post.content | safe | striptags | truncate(length=150) }}</span>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
 </div>
 {% endfor %}
 {% endblock content %}
