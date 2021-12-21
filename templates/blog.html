@@ -1,29 +1,22 @@
-{% extends "base.html" %}
-{% block content %}
-<h1 class="text-2xl font-semibold">Blog</h1>
-<section>
-  {% for year, posts in section.pages | group_by(attribute="year") %}
-  <div class="py-2 font-sans">
-    <h2 class="text-lg">{{ year }}</h2>
-    <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 justify-content">
+{% extends "base.html" %} {% block content %} {% for year, posts in section.pages | group_by(attribute="year") %}
+<div class="space-y-0">
+  <h2 class="font-medium">{{ year }}</h2>
+  <div class="flex flex-row space-x-2">
+    <div class="ml-2 border-r-2 border-opacity-80 border-rose-700"></div>
+    <ul class="flex flex-col flex-grow">
       {% for post in posts %}
-      <li class="flex flex-col p-2">
-        <div class="flex flex-row justify-between text-xs text-gray-500">
+      <li class="flex flex-col">
+        <a class="text-lg hover:underline" href="{{ post.permalink | safe }}">{{post.title}}</a>
+        <div class="flex flex-row justify-between text-xs text-gray-600">
           <span>{{ post.date | date(format='%d %B %Y') }}</span>
-          <span>{{ post.reading_time }} min read</span>
+          <span class="italic">{{ post.reading_time }} min read</span>
         </div>
         <div>
-          <span class="font-semibold hover:underline">
-            <a href="{{ post.permalink | safe }}">{{post.title}}</a>
-          </span>
-        </div>
-        <div>
-          <span class="font-serif text-xs text-gray-800 max-w-prose"><a href="{{ post.permalink | safe }}">{{ post.content | safe | striptags | truncate(length=150) }}</a></span>
+          <span class="text-xs"> {{ post.summary | safe }} </span>
         </div>
       </li>
       {% endfor %}
     </ul>
   </div>
-  {% endfor %}
-</section>
-{% endblock content %}
+</div>
+{% endfor %} {% endblock content %}
