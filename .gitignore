@@ -2,6 +2,7 @@ node_modules/
 public/
 doc/
 env
+package*.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
