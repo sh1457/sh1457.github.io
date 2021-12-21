@@ -1,5 +1,5 @@
 +++
-title = "ParChess - New multi-player variant of Chess"
+title = "ParChess"
 slug = "parchess"
 date = 2021-06-26
 +++
