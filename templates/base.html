@@ -1,9 +1,9 @@
-{% import "macros/opengraph.html" as social -%}
+{% import "macros/opengraph.html" as social %}
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% block head %}
+    {% block head -%}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,43 +13,44 @@
     <meta name="description" content="{{ config.description }}" />
     <meta name="author" content="{{ config.extra.author }}" />
     <meta name="keywords" content="{{ config.extra.keywords | join(sep=', ') }}" />
-
-    {%- block og_preview -%} {{ social::og_preview() }} {%- endblock og_preview-%}
-
+    {% block og_preview %} {{ social::og_preview() }} {%- endblock og_preview %}
     <link
       rel="shortcut icon"
       type="image/jpg"
       href="{{ get_url(path='res/ico/Anton-Gerasimenko-Harry-Potter-Remembrall-2.ico', trailing_slash=false) | safe }}"
     />
+
     <link rel="stylesheet" href="{{ get_url(path='css/tailwind.css', trailing_slash=false) | safe }}" />
-    {% block rss %}
+
+    {% block rss -%}
     <link
       rel="alternate"
       type="application/atom+xml"
       title="RSS"
       href="{{ get_url(path='atom.xml', trailing_slash=false) | safe }}"
     />
-    {% endblock rss %} {% endblock head %}
+    {%- endblock rss -%}
+    {%- endblock head %}
   </head>
 
-  <body class="w-11/12 mx-auto space-y-2">
-    <header class="flex flex-row justify-between mt-2 text-lg font-medium text-rose-700 hover:text-rose-600">
-      <a class="hover:underline" href="/">{{ config.title }}</a>
+  <body class="w-11/12 mx-auto space-y-2 bg-nuetral-400/5 dark:bg-nuetral-800 text-nuetral-900 dark:text-nuetral-100">
+    <header class="flex flex-row justify-between mt-2">
+      <a class="text-lg font-medium hover:underline text-primary-600 dark:text-primary-500 hover:text-primary-700" href="/">{{ config.title }}</a>
       <nav class="space-x-2">
-        {% for menu_link in config.extra.menu_links %} {% set link_url = menu_link.url | replace(from="$BASE_URL",
-        to=config.base_url) %}
-        <a class="hover:underline" href="{{ link_url | safe }}">
-          {{ menu_link.name }}
-        </a>
-        {% endfor %}
+        {%- for menu_link in config.extra.menu_links -%}
+        {% set link_url = menu_link.url | replace(from="$BASE_URL", to=config.base_url) %}
+        <a class="text-lg font-medium hover:underline text-primary-600 dark:text-primary-500 hover:text-primary-700" href="{{ link_url | safe }}">{{ menu_link.name }}</a>
+        {%- endfor %}
       </nav>
     </header>
 
-    <hr class="border-b-1 border-opacity-60 border-rose-700"/>
+    <hr class="border-t-4 border-double border-opacity-80 border-primary-700 dark:border-primary-600"/>
 
-    <section class="space-y-4">{% block content %} {% endblock content %}</section>
+    <section class="space-y-4">
+    {% block content %}{% endblock content %}
+    </section>
 
-    <footer class="py-4 text-xs text-right text-gray-800">
+    <footer class="py-4 text-xs text-right text-nuetral-600 dark:text-nuetral-400">
       &copy; {{ config.title }} {{ now() | date(format="%Y") }}
     </footer>
   </body>

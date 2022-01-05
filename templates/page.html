@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %} {{ config.title }} | {{page.title}} {% endblock title %}
+{% block title %}{{page.title}}{% endblock title %}
 
 {% block content %}
 
@@ -18,7 +18,7 @@
   {% endif %}
 </header>
 
-<article class="mx-auto prose lg:prose-xl prose-a:text-rose-700">
+<article class="mx-auto prose prose-zinc dark:prose-invert prose-a:no-underline hover:prose-a:underline lg:prose-xl prose-a:text-primary-600 dark:prose-a:text-primary-500">
   {{ page.content | safe }}
 </article>
 

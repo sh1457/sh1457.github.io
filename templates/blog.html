@@ -1,13 +1,15 @@
-{% extends "base.html" %} {% block content %} {% for year, posts in section.pages | group_by(attribute="year") %}
+{% extends "base.html" %}
+{% block content %}
+{% for year, posts in section.pages | group_by(attribute="year") %}
 <div class="space-y-0">
   <h2 class="font-medium">{{ year }}</h2>
   <div class="flex flex-row space-x-2">
-    <div class="ml-2 border-r-2 border-opacity-80 border-rose-700"></div>
+    <div class="ml-2 border-r-2 border-opacity-80 border-primary-600 dark:border-primary-500"></div>
     <ul class="flex flex-col flex-grow">
       {% for post in posts %}
       <li class="flex flex-col">
         <a class="text-lg hover:underline" href="{{ post.permalink | safe }}">{{post.title}}</a>
-        <div class="flex flex-row justify-between text-xs text-gray-600">
+        <div class="flex flex-row justify-between text-xs text-nuetral-600 dark:text-nuetral-400">
           <span>{{ post.date | date(format='%d %B %Y') }}</span>
           <span class="italic">{{ post.reading_time }} min read</span>
         </div>
@@ -19,4 +21,5 @@
     </ul>
   </div>
 </div>
-{% endfor %} {% endblock content %}
+{% endfor %}
+{% endblock content %}

@@ -2,7 +2,7 @@
 base_url = "https://sh1457.github.io"
 
 title = "My Remembrall"
-description = "Personal website of Sujith Sudarshan"
+description = "Personal website and blog"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
@@ -30,5 +30,4 @@ keywords = [
 
 menu_links = [
  { url = "$BASE_URL/blog/", name = "Blog" },
- { url = "$BASE_URL/about/", name = "About" },
 ]
