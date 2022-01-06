@@ -1,13 +1,12 @@
 +++
 title = "ParChess"
-slug = "parchess"
 date = 2021-06-26
 +++
 
-Chess is one of the oldest and greatest games ever. Over the years there have been many variants of the game like triple
-check, antichess, king of the hill. [Chess.com](https://www.chess.com/variants) and [Lichess.org](https://lichess.org/)
-have added these variants on their website as well. 4 player chess is a variant that came out a few years ago that
-allowed 4 persons to play chess full board.
+4 player chess is a variant that came out a few years ago that allowed 4 persons to play chess full board. Chess is one
+of the oldest and greatest games ever. Over the years there have been many variants <!-- more --> of the game like
+triple check, antichess, king of the hill. [Chess.com](https://www.chess.com/variants) and
+[Lichess.org](https://lichess.org) have added these variants on their website as well.
 
 ![4 player chess](4-player-board.jpg)
 
@@ -23,7 +22,7 @@ different in my thought up variant.
 
 The variant which I'd like to call parchess which stands for parallel chess, It is simply to divide the board to enable
 N players to play simultaneously that is each player moves once per turn. Here N is a number greater than 0. And
-par-2-chess is normal chess. Then we have the below divisons:
+par-2-chess is normal chess. Then we have the below divisions:
 
 | Variant Name | Number of players | Board                                                 |
 | ------------ | ----------------- | ----------------------------------------------------- |
@@ -33,18 +32,18 @@ par-2-chess is normal chess. Then we have the below divisons:
 | par-4-chess  | 3                 | ![base board par-4-chess](base-board-par-4-chess.jpg) |
 | par-5-chess  | 3                 | ![base board par-5-chess](base-board-par-5-chess.jpg) |
 
-The board divisions are very primative, maybe it would be more ideal to make divisions based on the sum of the piece
-values. I can imagine it being playable (mindbendingly) till par-16-chess where each player would have a piece and it's
-pawn. The variant goes upto par-32-chess wherein each player controls a single piece. Almost feels chaotic when 16 moves
-occur in 1 turn.
+The board divisions are very primitive, maybe it would be more ideal to make divisions based on the sum of the piece
+values. I can imagine it being playable (mind-bendingly) till par-16-chess where each player would have a piece and it's
+pawn. The variant goes up to par-32-chess wherein each player controls a single piece. Almost feels chaotic when 16
+moves occur each turn and the paradoxes generated.
 
-Although the actual gameplay might become unplayable after par-4-chess, mainly because all moves on each side have to be
-made each turn. Each side has visibilty into their side's moves, we can't have them moving into the same square. And
+Although the actual game might become unplayable after par-4-chess, mainly because all moves on each side have to be
+made each turn. Each side has visibility into their side's moves, we can't have them moving into the same square. And
 given it becomes more of a team game, depending on whether discussing moves be allowed or not, the time per move could
 be very high.
 
-I feel the concept is like mixing Turn-based Strategy (TBS) and Real-Time Strategy (RTS) game mechanics to chess which
-is purely turn-based.
+I feel the concept is an in between of Turn-based Strategy (TBS) and Real-Time Strategy (RTS) game mechanics to chess
+which is purely turn-based.
 
-Interesting found this version of [RTS chess](https://rtschess.herokuapp.com/). No turns at all, after moving a piece it
-has a cooldown time before moving it again.
+Interestingly enough found this version of [RTS chess](https://rtschess.herokuapp.com). No turns at all, after moving a
+piece it has a cool-down time before moving it again.
