@@ -30,7 +30,10 @@ def tailwind():
 
 def zola():
     """Serve zola process"""
-    cmd = ['zola', 'serve', '--open']
+    cmd = ['zola', 'serve',
+           '--interface', '0.0.0.0',
+           '--base-url', '127.0.0.1',
+           '--open']
 
     subprocess.run(cmd)
 

@@ -874,6 +874,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: static;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -893,6 +897,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex {
   display: flex;
+}
+
+.table {
+  display: table;
 }
 
 .w-11\/12 {
@@ -971,6 +979,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(225 29 72 / var(--tw-border-opacity));
 }
 
+.border-secondary-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(234 88 12 / var(--tw-border-opacity));
+}
+
 .border-opacity-80 {
   --tw-border-opacity: 0.8;
 }
@@ -990,6 +1003,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-right {
   text-align: right;
+}
+
+.indent-8 {
+  text-indent: 2rem;
 }
 
 .text-lg {
@@ -1032,6 +1049,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-nuetral-600 {
   --tw-text-opacity: 1;
   color: rgb(82 82 91 / var(--tw-text-opacity));
+}
+
+.text-nuetral-800 {
+  --tw-text-opacity: 1;
+  color: rgb(39 39 42 / var(--tw-text-opacity));
 }
 
 .hover\:text-primary-700:hover {
@@ -1086,6 +1108,11 @@ Ensure the default browser behavior of the `hidden` attribute.
     border-color: rgb(244 63 94 / var(--tw-border-opacity));
   }
 
+  .dark\:border-secondary-500 {
+    --tw-border-opacity: 1;
+    border-color: rgb(249 115 22 / var(--tw-border-opacity));
+  }
+
   .dark\:bg-nuetral-800 {
     --tw-bg-opacity: 1;
     background-color: rgb(39 39 42 / var(--tw-bg-opacity));
@@ -1104,6 +1131,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .dark\:text-nuetral-400 {
     --tw-text-opacity: 1;
     color: rgb(161 161 170 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-nuetral-300 {
+    --tw-text-opacity: 1;
+    color: rgb(212 212 216 / var(--tw-text-opacity));
   }
 
   .dark\:prose-a\:text-primary-500 :is(:where(a):not(:where([class~="not-prose"] *))) {

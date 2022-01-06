@@ -1,0 +1,27 @@
+{%- set uri = url | safe -%}
+
+{%- set data = load_data(url=uri) | as_str | split(pat=' ') -%}
+
+{%- set_global tokens = [] -%}
+{%- set_global flag = false -%}
+
+{%- for word in data -%}
+{%- if flag and word is containing("/table>") -%}
+{%- set_global tokens = tokens | concat(with="</table>") -%}
+{%- break -%}
+{%- endif -%}
+
+{%- if word is containing("<table") -%}
+{%- set_global flag = true -%}
+{%- endif -%}
+
+{%- if flag -%}
+{%- set_global tokens = tokens | concat(with=word) -%}
+{%- endif -%}
+{%- endfor -%}
+
+{%- set lines = tokens | join(sep=' ') | safe -%}
+
+{%- for line in lines -%}
+{{ lines }}<br />
+{%- endfor -%}
