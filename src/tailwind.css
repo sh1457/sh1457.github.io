@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .my-prose-markdown {
+    @apply mx-auto prose lg:prose-lg prose-thead:italic hover:prose-tr:bg-neutral-200 hover:dark:prose-tr:bg-neutral-700 dark:prose-invert prose-zinc prose-a:no-underline hover:prose-a:underline prose-a:text-primary-600 dark:prose-a:text-primary-500;
+  }
+}
