@@ -37,7 +37,7 @@ The sculptures and carvings in this ancient millennium old temple are so intrica
 this. There are so many challenges that are tough to do even with today's modern tools and equipment. There is a video
 that does more justice than my words can.
 
-{{ youtube(id="EvOEU3R9gng") }}
+{{ youtube2(id="EvOEU3R9gng") }}
 
 We were on the road again towards Mudigere and Brown Bean homestay.
 
