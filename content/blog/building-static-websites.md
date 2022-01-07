@@ -20,11 +20,11 @@ languages both interpreted and compiled. Building static websites is not a criti
 why tool performance is not the main criteria for choosing the right tool. But nonetheless the authors/creators would
 appreciate fast builds and deploys.
 
-| Tool    | Lang   |
-| ------- | ------ |
-| Jekyll  | ruby   |
-| Hugo    | go     |
-| Zola    | rust   |
+|  Tool   |  Lang  |
+| :-----: | :----: |
+| Jekyll  |  ruby  |
+|  Hugo   |   go   |
+|  Zola   |  rust  |
 | Pelican | python |
 
 But at the heart each tool provides configuration to create flexible site structures. The tools aim to separate the
