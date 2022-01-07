@@ -12,6 +12,21 @@ def clean():
     pass
 
 
+def npm_install():
+    from pathlib import Path
+    path = str(Path(__file__).parent.parent.parent.resolve())
+
+    print(path)
+
+    cmd = ['npm', 'install', '-D',
+           'tailwindcss@latest',
+           'postcss@latest',
+           'autoprefixer@latest',
+           '@tailwindcss/typography@latest']
+
+    subprocess.run(cmd, cwd=path, shell=True)
+
+
 def tailwind():
     """Launch watcher process"""
     from pathlib import Path
@@ -19,11 +34,10 @@ def tailwind():
 
     print(path)
 
-    cmd = ['tailwindcss',
+    cmd = ['npx', 'tailwindcss',
            '--input', './src/tailwind.css',
            '--output', './static/css/tailwind.css',
-           '--watch'
-          ]
+           '--watch']
 
     subprocess.run(cmd, cwd=path, shell=True)
 
@@ -31,7 +45,7 @@ def tailwind():
 def zola():
     """Serve zola process"""
     cmd = ['zola', 'serve',
-           '--interface', '0.0.0.0',
+           '--interface', '127.0.0.1',
            '--base-url', '127.0.0.1',
            '--open']
 
