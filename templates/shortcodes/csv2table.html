@@ -1,0 +1,17 @@
+{%- set data = load_data(path=path, format="csv") -%}
+<table>
+    <thead>
+        {%- for heading in data.headers -%}
+        <th>{{ heading | replace(from='_', to=' ') }}</th>
+        {%- endfor -%}
+    </thead>
+    <tbody>
+        {%- for record in data.records -%}
+        <tr>
+            {%- for value in record -%}
+            <td>{{ value }}</td>
+            {%- endfor -%}
+        </tr>
+        {%- endfor -%}
+    </tbody>
+</table>
