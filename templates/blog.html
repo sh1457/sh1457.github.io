@@ -4,17 +4,20 @@
 <div>
   <h2 class="font-medium">{{ year }}</h2>
   <div class="flex flex-row space-x-2">
-    <div class="ml-2 border-r-2 border-opacity-80 border-secondary-600 dark:border-secondary-500"></div>
+    <div class="ml-2 border-r-2 border-opacity-80 border-secondary-500 dark:border-secondary-400"></div>
     <ul class="flex flex-col flex-grow space-y-4">
       {% for post in posts %}
-      <li class="flex flex-col">
-        <a class="font-medium text-md hover:underline text-primary-600 dark:text-primary-500 hover:text-primary-700" href="{{ post.permalink | safe }}">{{ post.title }}</a>
-        <div class="flex flex-row justify-between text-xs text-nuetral-600 dark:text-nuetral-400">
+      <li class="flex flex-col space-y-2">
+        <div class="flex flex-row justify-between font-medium text-md hover:underline text-primary-600 dark:text-primary-500 hover:text-primary-700">
+          <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
+          <a href="{{ post.permalink | safe }}">👈</a>
+        </div>
+        <div class="flex flex-row justify-between text-xs text-neutral-600 dark:text-neutral-400">
           <span>{{ post.date | date(format='%d %B %Y') }}</span>
           <span class="italic">{{ post.reading_time }} min read</span>
         </div>
         <div>
-          <span class="text-xs indent-8 text-nuetral-800 dark:text-nuetral-300"> {{ post.summary | safe }} </span>
+          <span class="text-xs indent-8 text-neutral-800 dark:text-neutral-300"> {{ post.summary | safe }} </span>
         </div>
       </li>
       {% endfor %}
