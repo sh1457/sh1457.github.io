@@ -1,14 +1,8 @@
-// const remark = require('remark')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: {
     files: ['./templates/**/*.html', './content/**/*.{html,md}'],
-    // transform: {
-    //   md: (content) => {
-    //     return remark().process(content)
-    //   },
-    // },
   },
   theme: {
     colors: {
@@ -18,7 +12,7 @@ module.exports = {
       black: colors.black,
       primary: colors.rose,
       secondary: colors.orange,
-      nuetral: colors.zinc,
+      neutral: colors.zinc,
     },
     extend: {},
   },
