@@ -47,7 +47,7 @@ def zola():
     cmd = ['zola', 'serve',
            '--interface', '127.0.0.1',
            '--base-url', '127.0.0.1',
-           '--open']
+           '--open', '--drafts']
 
     subprocess.run(cmd)
 
