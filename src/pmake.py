@@ -61,7 +61,7 @@ def all():
 
 @click.command()
 @click.argument('cmds', nargs=-1)
-def pmake(cmds):
+def make(cmds):
     if not cmds:
         cmds = ("all",)
 
