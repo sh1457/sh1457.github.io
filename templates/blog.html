@@ -1,23 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 {% for year, posts in section.pages | group_by(attribute="year") %}
-<div>
-  <h2 class="font-medium">{{ year }}</h2>
-  <div class="flex flex-row space-x-2">
-    <div class="ml-2 border-r-2 border-opacity-80 border-secondary-500 dark:border-secondary-400"></div>
-    <ul class="flex flex-col flex-grow space-y-4">
+<div class="font-medium">
+  <h2 class="pl-4 font-mono underline decoration-3 decoration-wavy decoration-secondary-500 dark:decoration-secondary-600/95">{{ year }}</h2>
+  <div class="flex flex-row">
+    <div class="ml-6 border-l-2 border-dotted border-secondary-500 dark:border-secondary-600/95"></div>
+    <ul class="flex flex-col flex-grow mt-2 space-y-2">
       {% for post in posts %}
       <li class="flex flex-col space-y-2">
-        <div class="flex flex-row justify-between font-medium text-md">
-          <a class="hover:underline text-primary-600 dark:text-primary-500 hover:text-primary-700" href="{{ post.permalink | safe }}">{{ post.title }}</a>
-          <a class="font-normal hover:font-semibold md:text-md lg:text-lg" href="{{ post.permalink | safe }}">👈</a>
+        <div class="flex flex-row justify-between gap-4 -ml-7 text-md">
+          <span class="flex-none font-mono text-sm bg-transparent-500/50">{{ post.date | date(format='%b-%d') }}</span>
+          <a class="flex-auto hover:underline text-primary-600 dark:text-primary-500 hover:text-primary-700" href="{{ post.permalink | safe }}">{{ post.title }}</a>
+          <a class="flex-none place-self-end group-hover:underline" href="{{ post.permalink | safe }}">👈</a>
         </div>
-        <div class="flex flex-row justify-between text-xs text-neutral-600 dark:text-neutral-400">
-          <span>{{ post.date | date(format='%d %B %Y') }}</span>
-          <span class="italic">{{ post.reading_time }} min read</span>
-        </div>
-        <div>
-          <span class="text-xs indent-8 text-neutral-800 dark:text-neutral-300"> {{ post.summary | safe }} </span>
+        <div class="flex flex-row justify-between text-xs italic text-neutral-700 dark:text-neutral-300">
+          <span class="flex-auto indent-2"> {{ post.description | safe }} </span>
+          <span class="flex-none align-text-bottom">{{ post.reading_time }} min read</span>
         </div>
       </li>
       {% endfor %}

@@ -4,6 +4,7 @@ module.exports = {
   content: {
     files: ['./templates/**/*.html', './content/**/*.{html,md}'],
   },
+  darkMode: 'class',
   theme: {
     colors: {
       transparent: 'transparent',
@@ -12,9 +13,26 @@ module.exports = {
       black: colors.black,
       primary: colors.rose,
       secondary: colors.orange,
-      neutral: colors.zinc,
+      neutral: colors.neutral,
     },
-    extend: {},
+    extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              color: theme('colors.primary.600'),
+            },
+          },
+        },
+        dark: {
+          css: {
+            a: {
+              color: theme('colors.secondary.600'),
+              },
+            },
+        },
+      }),
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),

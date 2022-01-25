@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  a {
+    @apply font-medium hover:underline text-primary-600 dark:text-primary-500 hover:text-primary-700;
+  }
+}
+
 @layer components {
   .my-prose-markdown {
-    @apply mx-auto prose lg:prose-lg prose-thead:italic hover:prose-tr:bg-neutral-200 hover:dark:prose-tr:bg-neutral-700 dark:prose-invert prose-zinc prose-a:no-underline hover:prose-a:underline prose-a:text-primary-600 dark:prose-a:text-primary-500;
+    @apply mx-auto prose lg:prose-lg prose-neutral dark:prose-invert;
+     /* prose-thead:italic hover:prose-tr:bg-neutral-200 hover:dark:prose-tr:bg-neutral-700 prose-a:no-underline hover:prose-a:underline prose-a:text-primary-600 dark:prose-a:text-primary-500; */
   }
 }

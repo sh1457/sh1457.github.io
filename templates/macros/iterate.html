@@ -1,0 +1,31 @@
+{%- macro iterate(v, indent=0) -%}
+{%- set_global prefix=[] -%}
+{%- for i in range(end=indent) -%}
+    {%- set_global prefix = prefix | concat(with="|-- ") -%}
+{%- endfor -%}
+{%- set_global prefix=prefix | join(sep="") -%}
+{%- if v is iterable and v is object -%}
+    {%- for k2, v2 in v -%}
+        {%- if v2 is iterable -%}
+            {{ prefix }}{{ k2 }} :<br />{{ self::iterate(v=v2, indent=indent+1) }}
+        {%- else -%}
+            {%- if k2 == "content" -%}
+                {%- set v2 = "..." -%}
+            {%- endif -%}
+            {{ prefix }}{{ k2 }} : {{ v2 }}<br />
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}
+{%- if v is iterable and v is not object -%}
+    {%- for k2 in v -%}
+        {%- if k2 is iterable -%}
+            {{ self::iterate(v=k2, indent=indent+1) }}
+        {%- else -%}
+            {{ prefix }}{{ k2 }}<br />
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}
+{%- if v is not iterable -%}
+    {{ prefix }}{{ v }}<br />
+{%- endif -%}
+{%- endmacro iterate -%}

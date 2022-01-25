@@ -55,7 +55,9 @@ hard_link_static = false
 #       {name = "authors"}, # Basic definition: no feed or pagination
 #     ]
 #
-taxonomies = []
+taxonomies = [
+    {name = "tags", feed = true},
+]
 
 # When set to "true", a search index is built from the pages and section
 # content for `default_language`.
@@ -171,4 +173,5 @@ keywords = [
 
 menu_links = [
  { url = "$BASE_URL/blog/", name = "Blog" },
+ { url = "$BASE_URL/about/", name = "About" },
 ]

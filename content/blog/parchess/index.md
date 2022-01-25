@@ -1,49 +1,45 @@
 +++
 title = "ParChess"
+description = "An idea for a variant of chess based on multiple piece moves per turn"
 date = 2021-06-26
+updated = 2022-01-17
+draft = true
+[taxonomies]
+tags = ["idea", "chess"]
 +++
 
-4 player chess is a variant that came out a few years ago that allowed 4 persons to play chess full board. Chess is one
-of the oldest and greatest games ever. Over the years there have been many variants <!-- more --> of the game like
-triple check, antichess, king of the hill. [Chess.com](https://www.chess.com/variants) and
-[Lichess.org](https://lichess.org) have added these variants on their website as well.
+4 player chess is a variant that came out a few years ago that allowed 4 persons to play chess full board. Chess is one of the oldest and greatest games ever. Over the years there have been many variants <!-- more --> of the game like triple check, anti-chess, king of the hill. [Chess.com](https://www.chess.com/variants) and [Lichess.org](https://lichess.org) have added these variants on their website as well.
 
 ![4 player chess](4-player-board.jpg)
 
-This post came from a shower thought that I had. Why do we move only 1 piece at a time in chess? Many agree that in the
-game, white is automatically advantages due to the first move. This is also why in armageddons the
-[rules](https://www.chess.com/terms/armageddon-chess) are made to even the playing field. If having the first move is
-already so advantages then having 2 or more moves first would be a huge advantage. But is that true if both players have
-the same number of moves, should the position not be fairly equal?
+#### Why do we move only 1 piece at a time in chess?
 
-It's not that no one ever played with more number of moves. It has been played as a sort of odds game, where the
-stronger player allows the other to play 2 moves at a time. But the intention of playing multiple moves is a bit
-different in my thought up variant.
+Many agree that in the game, that white automatically gains an advantage from the first move. The player who goes first poses a question in the form of choice opening. The player who goes second is at many times guided into responding to the opening rather than developing their own flow. Modern chess theory has developed to the point where a master knows the ins and outs of the various openings and there is usually no surprises till the middle game.
 
-The variant which I'd like to call parchess which stands for parallel chess, It is simply to divide the board to enable
-N players to play simultaneously that is each player moves once per turn. Here N is a number greater than 0. And
-par-2-chess is normal chess. Then we have the below divisions:
+We can draw parallels to a debate, where the argument provided the first speaker and the summary provided by the last speaker is of the greatest impact among all the impactful statements and retorts in between. Naturally the advantage of going first in the debate is to set the context (_choose the opening_) and capture the flow (set traps or limit the opponents).
 
-| Variant Name | Number of players | Board                                                 |
-| ------------ | ----------------- | ----------------------------------------------------- |
-| par-1-chess  | 1                 | ![base board](base-board.jpg)                         |
-| par-2-chess  | 2                 | ![base board par-2-chess](base-board-par-2-chess.jpg) |
-| par-3-chess  | 3                 | ![base board par-3-chess](base-board-par-3-chess.jpg) |
-| par-4-chess  | 3                 | ![base board par-4-chess](base-board-par-4-chess.jpg) |
-| par-5-chess  | 3                 | ![base board par-5-chess](base-board-par-5-chess.jpg) |
+This is also why in armageddons the [rules](https://www.chess.com/terms/armageddon-chess) are made to level the playing field for black.
 
-The board divisions are very primitive, maybe it would be more ideal to make divisions based on the sum of the piece
-values. I can imagine it being playable (mind-bendingly) till par-16-chess where each player would have a piece and it's
-pawn. The variant goes up to par-32-chess wherein each player controls a single piece. Almost feels chaotic when 16
-moves occur each turn and the paradoxes generated.
+If having the first move is already so advantages, then would having 2 or more moves first be a much bigger advantage? Theoretically, given the state of modern chess theory not much would have changed. Then, is it fair to say that if both players have the same number of moves per turn, the position should be fairly equal?
 
-Although the actual game might become unplayable after par-4-chess, mainly because all moves on each side have to be
-made each turn. Each side has visibility into their side's moves, we can't have them moving into the same square. And
-given it becomes more of a team game, depending on whether discussing moves be allowed or not, the time per move could
-be very high.
+It's hard to say for sure. But surely there will be many variations in the openings, openings would become much more than attack or defense. It might enable openings where simultaneous attack and defense is possible or a swiftly developed attack on one side. If such an 2-step attack comes into the picture, the defense will need to think whether they should defend the 1st step or the 2nd step or both. Let's call this variant **multi-chess**, a chess where players can move N pieces per turn.
 
-I feel the concept is an in between of Turn-based Strategy (TBS) and Real-Time Strategy (RTS) game mechanics to chess
-which is purely turn-based.
+It's not the first time that multiple moves have been seen. In a sort of odds game, where one player allows the other to make N moves as white before the game starts. This is an **asymmetric** game where the game starts from an unequal position.
 
-Interestingly enough found this version of [RTS chess](https://rtschess.herokuapp.com). No turns at all, after moving a
-piece it has a cool-down time before moving it again.
+I have not seen many games where a player allows the other to make N moves every turn while they make only 1 move each turn. In fact that might be too difficult of an odds. Imagine being attacked on 2 fronts while being able to defend only 1 side. But the intent of playing multiple moves is a bit different in my thought up variant.
+
+The variant which I'd like to propose as **par-chess** which stands for parallel chess, To put it simply, it's a team match of chess formed by dividing the board into N regions to enable N players to play simultaneously that is each player of each team moves 1 piece per turn. Here N is a number greater than 0. And par-2-chess is normal chess. Then we have the below divisions:
+
+| Variant Name | Board                                                 |
+| ------------ | ----------------------------------------------------- |
+| par-1-chess  | ![base board](base-board.jpg)                         |
+| par-2-chess  | ![base board par-2-chess](base-board-par-2-chess.jpg) |
+| par-3-chess  | ![base board par-3-chess](base-board-par-3-chess.jpg) |
+| par-4-chess  | ![base board par-4-chess](base-board-par-4-chess.jpg) |
+| par-5-chess  | ![base board par-5-chess](base-board-par-5-chess.jpg) |
+
+The board divisions are very primitive, maybe it needs more logic to it. Like making regions based on the sum of the piece values. I can imagine it being playable (theoretically) till par-16-chess where each player would have a piece and it's pawn. The variant goes up to par-32-chess wherein each player controls a single piece. Almost feels chaotic when 16 moves occur each turn.
+
+I feel the concept is an in between of Turn-based Strategy (TBS) and Real-Time Strategy (RTS) game mechanics to chess which is purely turn-based.
+
+Interestingly enough found this version of [RTS chess](https://rtschess.herokuapp.com). No turns at all, after moving a piece it has a cool-down time before moving it again.

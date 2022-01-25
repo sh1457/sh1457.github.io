@@ -423,6 +423,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+a {
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(225 29 72 / var(--tw-text-opacity));
+}
+
+a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(190 18 60 / var(--tw-text-opacity));
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.dark a {
+  --tw-text-opacity: 1;
+  color: rgb(244 63 94 / var(--tw-text-opacity));
+}
+
 *, ::before, ::after {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -482,7 +500,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .my-prose-markdown :where(a):not(:where([class~="not-prose"] *)) {
-  color: var(--tw-prose-links);
+  color: #e11d48;
   text-decoration: underline;
   font-weight: 500;
 }
@@ -877,92 +895,59 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .my-prose-markdown {
-  --tw-prose-body: #3f3f46;
-  --tw-prose-headings: #18181b;
-  --tw-prose-lead: #52525b;
-  --tw-prose-links: #18181b;
-  --tw-prose-bold: #18181b;
-  --tw-prose-counters: #71717a;
-  --tw-prose-bullets: #d4d4d8;
-  --tw-prose-hr: #e4e4e7;
-  --tw-prose-quotes: #18181b;
-  --tw-prose-quote-borders: #e4e4e7;
-  --tw-prose-captions: #71717a;
-  --tw-prose-code: #18181b;
-  --tw-prose-pre-code: #e4e4e7;
-  --tw-prose-pre-bg: #27272a;
-  --tw-prose-th-borders: #d4d4d8;
-  --tw-prose-td-borders: #e4e4e7;
-  --tw-prose-invert-body: #d4d4d8;
+  --tw-prose-body: #404040;
+  --tw-prose-headings: #171717;
+  --tw-prose-lead: #525252;
+  --tw-prose-links: #171717;
+  --tw-prose-bold: #171717;
+  --tw-prose-counters: #737373;
+  --tw-prose-bullets: #d4d4d4;
+  --tw-prose-hr: #e5e5e5;
+  --tw-prose-quotes: #171717;
+  --tw-prose-quote-borders: #e5e5e5;
+  --tw-prose-captions: #737373;
+  --tw-prose-code: #171717;
+  --tw-prose-pre-code: #e5e5e5;
+  --tw-prose-pre-bg: #262626;
+  --tw-prose-th-borders: #d4d4d4;
+  --tw-prose-td-borders: #e5e5e5;
+  --tw-prose-invert-body: #d4d4d4;
   --tw-prose-invert-headings: #fff;
-  --tw-prose-invert-lead: #a1a1aa;
+  --tw-prose-invert-lead: #a3a3a3;
   --tw-prose-invert-links: #fff;
   --tw-prose-invert-bold: #fff;
-  --tw-prose-invert-counters: #a1a1aa;
-  --tw-prose-invert-bullets: #52525b;
-  --tw-prose-invert-hr: #3f3f46;
-  --tw-prose-invert-quotes: #f4f4f5;
-  --tw-prose-invert-quote-borders: #3f3f46;
-  --tw-prose-invert-captions: #a1a1aa;
+  --tw-prose-invert-counters: #a3a3a3;
+  --tw-prose-invert-bullets: #525252;
+  --tw-prose-invert-hr: #404040;
+  --tw-prose-invert-quotes: #f5f5f5;
+  --tw-prose-invert-quote-borders: #404040;
+  --tw-prose-invert-captions: #a3a3a3;
   --tw-prose-invert-code: #fff;
-  --tw-prose-invert-pre-code: #d4d4d8;
+  --tw-prose-invert-pre-code: #d4d4d4;
   --tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
-  --tw-prose-invert-th-borders: #52525b;
-  --tw-prose-invert-td-borders: #3f3f46;
+  --tw-prose-invert-th-borders: #525252;
+  --tw-prose-invert-td-borders: #404040;
   margin-left: auto;
   margin-right: auto;
 }
 
-.my-prose-markdown :is(:where(a):not(:where([class~="not-prose"] *))) {
-  --tw-text-opacity: 1;
-  color: rgb(225 29 72 / var(--tw-text-opacity));
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
-}
-
-.my-prose-markdown :is(:where(a):not(:where([class~="not-prose"] *))):hover {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
-}
-
-.my-prose-markdown :is(:where(thead):not(:where([class~="not-prose"] *))) {
-  font-style: italic;
-}
-
-.my-prose-markdown :is(:where(tr):not(:where([class~="not-prose"] *))):hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(228 228 231 / var(--tw-bg-opacity));
-}
-
-@media (prefers-color-scheme: dark) {
-  .my-prose-markdown {
-    --tw-prose-body: var(--tw-prose-invert-body);
-    --tw-prose-headings: var(--tw-prose-invert-headings);
-    --tw-prose-lead: var(--tw-prose-invert-lead);
-    --tw-prose-links: var(--tw-prose-invert-links);
-    --tw-prose-bold: var(--tw-prose-invert-bold);
-    --tw-prose-counters: var(--tw-prose-invert-counters);
-    --tw-prose-bullets: var(--tw-prose-invert-bullets);
-    --tw-prose-hr: var(--tw-prose-invert-hr);
-    --tw-prose-quotes: var(--tw-prose-invert-quotes);
-    --tw-prose-quote-borders: var(--tw-prose-invert-quote-borders);
-    --tw-prose-captions: var(--tw-prose-invert-captions);
-    --tw-prose-code: var(--tw-prose-invert-code);
-    --tw-prose-pre-code: var(--tw-prose-invert-pre-code);
-    --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
-    --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
-    --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
-  }
-
-  .my-prose-markdown :is(:where(a):not(:where([class~="not-prose"] *))) {
-    --tw-text-opacity: 1;
-    color: rgb(244 63 94 / var(--tw-text-opacity));
-  }
-
-  .my-prose-markdown :is(:where(tr):not(:where([class~="not-prose"] *))):hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(63 63 70 / var(--tw-bg-opacity));
-  }
+.dark .my-prose-markdown {
+  --tw-prose-body: var(--tw-prose-invert-body);
+  --tw-prose-headings: var(--tw-prose-invert-headings);
+  --tw-prose-lead: var(--tw-prose-invert-lead);
+  --tw-prose-links: var(--tw-prose-invert-links);
+  --tw-prose-bold: var(--tw-prose-invert-bold);
+  --tw-prose-counters: var(--tw-prose-invert-counters);
+  --tw-prose-bullets: var(--tw-prose-invert-bullets);
+  --tw-prose-hr: var(--tw-prose-invert-hr);
+  --tw-prose-quotes: var(--tw-prose-invert-quotes);
+  --tw-prose-quote-borders: var(--tw-prose-invert-quote-borders);
+  --tw-prose-captions: var(--tw-prose-invert-captions);
+  --tw-prose-code: var(--tw-prose-invert-code);
+  --tw-prose-pre-code: var(--tw-prose-invert-pre-code);
+  --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
+  --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
+  --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
 }
 
 @media (min-width: 1024px) {
@@ -1177,6 +1162,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.my-prose-markdown {
+  /* prose-thead:italic hover:prose-tr:bg-neutral-200 hover:dark:prose-tr:bg-neutral-700 prose-a:no-underline hover:prose-a:underline prose-a:text-primary-600 dark:prose-a:text-primary-500; */
+}
+
+.invisible {
+  visibility: hidden;
+}
+
 .static {
   position: static;
 }
@@ -1185,17 +1178,41 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
 }
 
 .mt-2 {
   margin-top: 0.5rem;
 }
 
-.ml-2 {
-  margin-left: 0.5rem;
+.-ml-7 {
+  margin-left: -1.75rem;
+}
+
+.box-border {
+  box-sizing: border-box;
 }
 
 .block {
@@ -1210,8 +1227,44 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: table;
 }
 
+.hidden {
+  display: none;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
 .aspect-video {
   aspect-ratio: 16 / 9;
+}
+
+.h-8 {
+  height: 2rem;
+}
+
+.h-7 {
+  height: 1.75rem;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
+.min-h-\[80vh\] {
+  min-height: 80vh;
+}
+
+.w-8 {
+  width: 2rem;
+}
+
+.w-7 {
+  width: 1.75rem;
+}
+
+.w-6 {
+  width: 1.5rem;
 }
 
 .w-11\/12 {
@@ -1222,12 +1275,114 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
+.flex-none {
+  flex: none;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
 
 .grow {
   flex-grow: 1;
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.animate-bounce {
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
+}
+
+@-webkit-keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@-webkit-keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+          animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-row {
@@ -1238,8 +1393,42 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -1248,16 +1437,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
-.space-x-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+.place-self-end {
+  place-self: end;
 }
 
-.space-y-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+.self-center {
+  align-self: center;
 }
 
 .truncate {
@@ -1270,12 +1455,38 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.5rem;
 }
 
-.border-t-4 {
-  border-top-width: 4px;
+.border-y-2 {
+  border-top-width: 2px;
+  border-bottom-width: 2px;
 }
 
-.border-r-2 {
-  border-right-width: 2px;
+.border-y-4 {
+  border-top-width: 4px;
+  border-bottom-width: 4px;
+}
+
+.border-b-4 {
+  border-bottom-width: 4px;
+}
+
+.border-l-2 {
+  border-left-width: 2px;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.border-t-2 {
+  border-top-width: 2px;
+}
+
+.border-b-8 {
+  border-bottom-width: 8px;
+}
+
+.border-dotted {
+  border-style: dotted;
 }
 
 .border-double {
@@ -1296,13 +1507,79 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 0.8;
 }
 
-.bg-neutral-400\/5 {
-  background-color: rgb(161 161 170 / 0.05);
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-secondary-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(154 52 18 / var(--tw-bg-opacity));
+}
+
+.bg-secondary-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 45 18 / var(--tw-bg-opacity));
+}
+
+.fill-transparent {
+  fill: transparent;
+}
+
+.fill-black {
+  fill: #000;
+}
+
+.fill-current {
+  fill: currentColor;
+}
+
+.fill-white {
+  fill: #fff;
+}
+
+.stroke-black {
+  stroke: #000;
+}
+
+.stroke-primary-400 {
+  stroke: #fb7185;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
 }
 
 .text-center {
@@ -1313,13 +1590,30 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-align: right;
 }
 
-.indent-8 {
-  text-indent: 2rem;
+.indent-2 {
+  text-indent: 0.5rem;
 }
 
-.text-lg {
-  font-size: 1.125rem;
+.align-text-bottom {
+  vertical-align: text-bottom;
+}
+
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.text-xl {
+  font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-xs {
@@ -1332,25 +1626,25 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2rem;
 }
 
-.font-medium {
-  font-weight: 500;
-}
-
-.font-normal {
-  font-weight: 400;
-}
-
 .font-semibold {
   font-weight: 600;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .italic {
   font-style: italic;
 }
 
-.text-neutral-900 {
+.text-secondary-900 {
   --tw-text-opacity: 1;
-  color: rgb(24 24 27 / var(--tw-text-opacity));
+  color: rgb(124 45 18 / var(--tw-text-opacity));
+}
+
+.text-current {
+  color: currentColor;
 }
 
 .text-primary-600 {
@@ -1358,18 +1652,106 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(225 29 72 / var(--tw-text-opacity));
 }
 
-.text-neutral-600 {
+.text-neutral-700 {
   --tw-text-opacity: 1;
-  color: rgb(82 82 91 / var(--tw-text-opacity));
+  color: rgb(64 64 64 / var(--tw-text-opacity));
 }
 
-.text-neutral-800 {
+.text-black {
   --tw-text-opacity: 1;
-  color: rgb(39 39 42 / var(--tw-text-opacity));
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.hover\:font-semibold:hover {
-  font-weight: 600;
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.decoration-secondary-500 {
+  -webkit-text-decoration-color: #f97316;
+          text-decoration-color: #f97316;
+}
+
+.decoration-wavy {
+  -webkit-text-decoration-style: wavy;
+          text-decoration-style: wavy;
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.transition {
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.delay-150 {
+  transition-delay: 150ms;
+}
+
+.delay-200 {
+  transition-delay: 200ms;
+}
+
+.duration-100 {
+  transition-duration: 100ms;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
+.duration-150 {
+  transition-duration: 150ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover\:rotate-45:hover {
+  --tw-rotate: 45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:rotate-90:hover {
+  --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hover\:animate-spin:hover {
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.hover\:animate-pulse:hover {
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.hover\:animate-\[wiggle_1s_ease-in-out_infinite\]:hover {
+  -webkit-animation: wiggle 1s ease-in-out infinite;
+          animation: wiggle 1s ease-in-out infinite;
+}
+
+.hover\:text-current:hover {
+  color: currentColor;
 }
 
 .hover\:text-primary-700:hover {
@@ -1382,40 +1764,113 @@ Ensure the default browser behavior of the `hidden` attribute.
           text-decoration-line: underline;
 }
 
-@media (prefers-color-scheme: dark) {
-  .dark\:border-primary-600 {
-    --tw-border-opacity: 1;
-    border-color: rgb(225 29 72 / var(--tw-border-opacity));
+.hover\:no-underline:hover {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+.group:hover .group-hover\:visible {
+  visibility: visible;
+}
+
+.group:hover .group-hover\:underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.dark .dark\:inline {
+  display: inline;
+}
+
+.dark .dark\:hidden {
+  display: none;
+}
+
+.dark .dark\:border-primary-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(225 29 72 / var(--tw-border-opacity));
+}
+
+.dark .dark\:border-secondary-600\/95 {
+  border-color: rgb(234 88 12 / 0.95);
+}
+
+.dark .dark\:bg-neutral-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:fill-white {
+  fill: #fff;
+}
+
+.dark .dark\:fill-transparent {
+  fill: transparent;
+}
+
+.dark .dark\:fill-current {
+  fill: currentColor;
+}
+
+.dark .dark\:stroke-white {
+  stroke: #fff;
+}
+
+.dark .dark\:text-secondary-200 {
+  --tw-text-opacity: 1;
+  color: rgb(254 215 170 / var(--tw-text-opacity));
+}
+
+.dark .dark\:text-current {
+  color: currentColor;
+}
+
+.dark .dark\:text-primary-500 {
+  --tw-text-opacity: 1;
+  color: rgb(244 63 94 / var(--tw-text-opacity));
+}
+
+.dark .dark\:text-neutral-300 {
+  --tw-text-opacity: 1;
+  color: rgb(212 212 212 / var(--tw-text-opacity));
+}
+
+.dark .dark\:text-secondary-100 {
+  --tw-text-opacity: 1;
+  color: rgb(255 237 213 / var(--tw-text-opacity));
+}
+
+.dark .dark\:text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.dark .dark\:decoration-secondary-600\/95 {
+  -webkit-text-decoration-color: rgb(234 88 12 / 0.95);
+          text-decoration-color: rgb(234 88 12 / 0.95);
+}
+
+.dark .dark\:invert {
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.dark .dark\:hover\:text-current:hover {
+  color: currentColor;
+}
+
+.dark .dark\:hover\:no-underline:hover {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+@media (min-width: 640px) {
+  .sm\:inline-block {
+    display: inline-block;
   }
 
-  .dark\:border-secondary-400 {
-    --tw-border-opacity: 1;
-    border-color: rgb(251 146 60 / var(--tw-border-opacity));
-  }
-
-  .dark\:bg-neutral-800 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(39 39 42 / var(--tw-bg-opacity));
-  }
-
-  .dark\:text-neutral-100 {
-    --tw-text-opacity: 1;
-    color: rgb(244 244 245 / var(--tw-text-opacity));
-  }
-
-  .dark\:text-primary-500 {
-    --tw-text-opacity: 1;
-    color: rgb(244 63 94 / var(--tw-text-opacity));
-  }
-
-  .dark\:text-neutral-400 {
-    --tw-text-opacity: 1;
-    color: rgb(161 161 170 / var(--tw-text-opacity));
-  }
-
-  .dark\:text-neutral-300 {
-    --tw-text-opacity: 1;
-    color: rgb(212 212 216 / var(--tw-text-opacity));
+  .sm\:text-center {
+    text-align: center;
   }
 }
 
@@ -1423,11 +1878,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:justify-around {
     justify-content: space-around;
   }
+
+  .md\:text-left {
+    text-align: left;
+  }
 }
 
 @media (min-width: 1024px) {
-  .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+  .lg\:text-right {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:text-center {
+    text-align: center;
   }
 }
