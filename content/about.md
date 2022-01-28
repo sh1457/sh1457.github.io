@@ -2,17 +2,13 @@
 title = "About me"
 date = 2021-12-01
 updated = 2022-01-17
+[extra]
+hide_title = true
 +++
 
-## Hello! I'm Sujith Sudarshan.
+### Hello! I'm Sujith Sudarshan
 
-I'm interested in **D**ata, **D**esign and **D**ilemnas.
-
-I'm currently working as a technology consultant. My work involves designing data driven solutions. I have been interested in reading about python, zig, game design, performance optimization.
-
-Ever since I met my first computer at 9, I felt that technology and making things with it was fun. That's when I knew that the future requires us to use technology to make our lives better.
-
-Take a look at my work below to see what I'm working on, and get in touch if you'd like to work together!
+I'm interested in Data, Design and Dilemmas. I work as a technology consultant. It involves designing data driven solutions. Some of my interests are python, zig, game design, performance optimization. Take a look at my work and reach out if you'd like to collaborate!
 
 ### Projects
 
@@ -22,21 +18,12 @@ A telegram bot to self-assess physical and mental state
 
 ### Credits
 
-- Favicon
-
-[iconarchive.com/artist/anton-gerasimenko](https://iconarchive.com/artist/anton-gerasimenko.html)
-
-> `The products or characters depicted in these icons are © by J.K. Rowling & Warner Bros.`
-
-- GitHub Actions - Zola Deploy Action
-
-[github.com/shalzz/zola-deploy-action](https://github.com/shalzz/zola-deploy-action)
-
+- [github.com/shalzz/zola-deploy-action](https://github.com/shalzz/zola-deploy-action)
 - Powered by [zola](https://getzola.org)
-
 - Powered by [tailwindcss](https://tailwindcss.com/)
+- The products/characters/concepts depicted from the Harry Potter universe are © by J.K. Rowling & Warner Bros.
 
-- Social media links
+### Social media links
 
-  - [Github](https://github.com/sh1457)
-  - [Twitter](https://twitter.com/sh1457)
+- [Github](https://github.com/sh1457)
+- [Twitter](https://twitter.com/sh1457)

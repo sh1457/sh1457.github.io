@@ -14,12 +14,7 @@
     <meta name="author" content="{{ config.extra.author }}" />
     <meta name="keywords" content="{{ config.extra.keywords | join(sep=', ') }}" />
     {% block og_preview %} {{ social::og_preview() }} {%- endblock og_preview %}
-    <link
-      rel="shortcut icon"
-      type="image/jpg"
-      href="{{ get_url(path='res/ico/Anton-Gerasimenko-Harry-Potter-Remembrall-2.ico', trailing_slash=false) | safe }}"
-    />
-
+    <link rel="icon" type="image/ico" href="{{ get_url(path='img/rmbrll.ico', trailing_slash=false) | safe }}" />
     <link rel="stylesheet" href="{{ get_url(path='css/tailwind.css', trailing_slash=false) | safe }}" />
 
     {% block rss -%}
@@ -30,6 +25,137 @@
       href="{{ get_url(path='atom.xml', trailing_slash=false) | safe }}"
     />
     {%- endblock rss -%}
+    {%- endblock head %}
+  </head>
+
+  <body class="box-border mx-auto text-black bg-white dark:bg-neutral-900 dark:text-white">
+    <header class="flex flex-row items-center gap-4 px-4 pt-4 pb-2 sm:px-8 sm:gap-6">
+      <a class="flex flex-col justify-center text-current sm:gap-2 sm:flex-row group shrink-0" href="/">
+        <svg id="logo" class="self-center transition duration-300 ease-in-out group-hover:scale-125 motion-reduce:transition-none motion-reduce:transform-none" width="40" height="40" viewBox="0 0 110 110" preserveAspectRatio="xMidYMid meet">
+          <rect x="0" y="0" width="100%" height="100%" fill="transparent" />
+          <circle cx="50%" cy="50%" r="50" fill="transparent" stroke="#2B2B2B" filter="url(#drop_shadow)" />
+          <g style="isolation: isolate;">
+            <g style="mix-blend-mode: multiply" filter="url(#filter0_f_0_1)">
+              <circle cx="50%" cy="50%" r="49" fill="#FC6F0911" stroke="#2B2B2B" />
+            </g>
+            <g class="transition duration-300 ease-in-out origin-center group-hover:animate-smoke">
+              <g style="mix-blend-mode: multiply" filter="url(#filter1_f_0_1)">
+                <circle cx="40%" cy="55%" r="29" fill="#FC090999" />
+              </g>
+              <g style="mix-blend-mode: multiply" filter="url(#filter2_f_0_1)">
+                <circle cx="40%" cy="55%" r="9" fill="#FC0909" />
+              </g>
+            </g>
+          </g>
+          <g transform="translate(-10,-10)
+                        rotate(-4)
+                        scale(1.07)" mask="url(#my_mask)">
+              <mask id="my_mask">
+                  <rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF" />
+                  <circle transform="translate(10,10)
+                          rotate(4)
+                          scale(0.92)" cx="50%" cy="50%" r="50" fill="transparent" stroke="#000000"
+                      clip-path="url(#cut-off)" />
+                  <path
+                      d="M78.4877 53.8432C84.2991 65.4992 87.3591 77.122 87.6261 86.478C87.8945 95.8801 85.3478 102.792 80.2015 105.358C75.0553 107.924 68.0022 105.798 60.6549 99.9254C53.3435 94.0815 45.9026 84.643 40.0912 72.987C34.2798 61.3311 31.2198 49.7083 30.9528 40.3522C30.6844 30.9502 33.2311 24.0377 38.3773 21.4719C43.5236 18.9061 50.5767 21.0322 57.924 26.9049C65.2354 32.7487 72.6762 42.1873 78.4877 53.8432Z"
+                      fill="#000000" />
+              </mask>
+              <path
+                  d="M86.5343 48.2977C92.6731 60.6102 95.344 73.1689 94.7219 83.5068C94.0988 93.8602 90.1882 101.878 83.2869 105.319C76.3855 108.76 67.6289 107.058 58.9854 101.324C50.3547 95.5997 41.9323 85.9086 35.7935 73.5962C29.6548 61.2837 26.9839 48.725 27.606 38.3871C28.229 28.0337 32.1396 20.016 39.041 16.5752C45.9423 13.1343 54.6989 14.8363 63.3425 20.5695C71.9731 26.2942 80.3956 35.9853 86.5343 48.2977Z"
+                  fill="#FC6F09" stroke="#000000" />
+              <path
+                  d="M82.1927 50.7573C88.2069 62.82 91.0853 74.9926 90.8974 84.9082C90.709 94.851 87.4506 102.377 81.3689 105.41C75.2872 108.442 67.3154 106.515 59.2614 100.681C51.2293 94.864 43.24 85.2396 37.2258 73.177C31.2116 61.1143 28.3333 48.9417 28.5211 39.026C28.7095 29.0833 31.9679 21.5569 38.0496 18.5247C44.1313 15.4924 52.1032 17.4197 60.1572 23.2529C68.1892 29.0702 76.1785 38.6946 82.1927 50.7573Z"
+                  fill="#FC6F09" stroke="#000000" />
+              <path
+                  d="M78.4877 53.8432C84.2991 65.4992 87.3591 77.122 87.6261 86.478C87.8945 95.8801 85.3478 102.792 80.2015 105.358C75.0553 107.924 68.0022 105.798 60.6549 99.9254C53.3435 94.0815 45.9026 84.643 40.0912 72.987C34.2798 61.3311 31.2198 49.7083 30.9528 40.3522C30.6844 30.9502 33.2311 24.0377 38.3773 21.4719C43.5236 18.9061 50.5767 21.0322 57.924 26.9049C65.2354 32.7487 72.6762 42.1873 78.4877 53.8432Z"
+                  fill="#FC6F09" stroke="#000000" />
+          </g>
+          <defs>
+              <filter id="drop_shadow">
+                  <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="#FFFFFF" />
+              </filter>
+              <filter id="filter0_f_0_1" x="5" y="5" width="100" height="100" filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                  <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur_0_1" />
+              </filter>
+              <filter id="filter1_f_0_1" x="5" y="5" width="100" height="100" filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                  <feGaussianBlur stdDeviation="7" result="effect1_foregroundBlur_0_1" />
+              </filter>
+              <filter id="filter2_f_0_1" x="0" y="0" width="100" height="100" filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                  <feGaussianBlur stdDeviation="13" result="effect1_foregroundBlur_0_1" />
+              </filter>
+              <clipPath id="cut-off">
+                  <rect x="5" y="8" width="28%" height="25%" fill="black" />
+              </clipPath>
+          </defs>
+        </svg>
+        <span id="title" class="self-center hidden font-serif text-lg italic font-semibold sm:text-xl sm:inline-block">
+          {{ config.title | lower }}
+        </span>
+        <span id="title-short" class="self-center font-serif text-lg italic font-semibold sm:text-xl sm:hidden">
+          my rmbrll
+        </span>
+      </a>
+      <nav class="flex flex-row flex-wrap justify-end gap-4 sm:gap-6 grow">
+        {%- for menu_link in config.extra.menu_links -%} {% set link_url = menu_link.url | replace(from="$BASE_URL", to=config.base_url) %}
+        <a class="font-semibold text-md sm:text-lg text-primary-500 dark:text-primary-600" href="{{ link_url | safe }}">/{{ menu_link.name | lower }}</a>
+        {%- endfor %}
+      </nav>
+      <div class="flex flex-row gap-4 sm:gap-6">
+        <input type="checkbox" name="" id="dark-mode-toggle" class="hidden" />
+        <label for="dark-mode-toggle" class="cursor-pointer">
+          <svg
+            id="sun"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="self-center hidden w-8 h-8 dark:inline fill-white stroke-white"
+          >
+            <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+            <path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"></path>
+          </svg>
+          <svg
+            id="moon"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="self-center w-8 h-8 fill-black dark:hidden stroke-black"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"></path>
+          </svg>
+        </label>
+        <a href="https://github.com/sh1457/sh1457.github.io">
+          <svg viewBox="0 0 16 16" class="self-center w-7 h-7 fill-black dark:fill-white">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <hr class="border-double border-opacity-70 border-y-4 border-y-secondary-600" />
+
+    <section class="w-11/12 px-4 py-4 mx-auto">
+      {% block content %}{% endblock content %}
+    </section>
+
+    <footer class="flex flex-row flex-wrap justify-around p-4 mx-4 font-mono text-xs italic font-thin text-center text-neutral-700 dark:text-neutral-400">
+      <span>Any and all opinions listed here are my own and not representative of my employers; future, past and present.</span>
+      <span class="text-right sm:text-center md:text-left lg:text-right xl:text-center">&copy; 2020-{{ now() | date(format="%Y") }} Sujith Sudarshan</span>
+    </footer>
+
     <script>
       const toggleDarkMode = function () {
         var theme = 'light'
@@ -46,7 +172,7 @@
         return theme
       }
 
-      document.addEventListener('DOMContentLoaded', function () {
+      const themeSetter = function () {
         const checkbox = document.querySelector('#dark-mode-toggle')
 
         const theme = toggleDarkMode()
@@ -63,209 +189,14 @@
           }
           toggleDarkMode()
         })
-      })
+      }
 
-      // Whenever the user explicitly chooses to respect the OS preference
-      //localStorage.removeItem('theme')
+      if (document.readyState == 'loading') {
+        const theme = toggleDarkMode()
+        document.addEventListener('DOMContentLoaded', themeSetter);
+      } else {
+        themeSetter();
+      }
     </script>
-    {%- endblock head %}
-  </head>
-
-  <body class="box-border mx-auto text-black bg-white dark:bg-neutral-900 dark:text-white">
-    <header class="flex flex-row items-center gap-6 px-8 pt-4 pb-2">
-      <a class="flex flex-row justify-center gap-2 text-current shrink-0 dark:text-current hover:no-underline hover:text-current dark:hover:no-underline dark:hover:text-current" href="/">
-        <span class="relative self-center transition duration-1000 ease-in-out delay-200 hover:animate-pulse group">
-          <svg
-            class="static self-center w-8 h-8 aspect-square fill-transparent dark:fill-white"
-            width="100"
-            height="103"
-            viewBox="0 0 100 103"
-          >
-            <rect width="100" height="100" class="dark:fill-transparent"/>
-            <ellipse cx="50" cy="51.5" rx="46" ry="47.5" stroke="#2B2B2C" />
-            <path
-              d="M70.8006 39.815C76.9314 52.1115 79.7443 64.581 79.3575 74.7876C78.9698 85.0154 75.3834 92.8426 68.8665 96.0918C62.3495 99.3411 53.9401 97.4948 45.5385 91.6491C37.1543 85.8155 28.8886 76.0647 22.7578 63.7682C16.6271 51.4718 13.8141 39.0023 14.201 28.7957C14.5886 18.5678 18.175 10.7406 24.6919 7.4914C31.2089 4.24217 39.6183 6.08849 48.0199 11.9342C56.4041 17.7677 64.6698 27.5186 70.8006 39.815Z"
-              fill="#FC6F09"
-              stroke="black"
-            />
-            <path
-              d="M73.5343 38.2977C79.6731 50.6102 82.344 63.1689 81.7219 73.5068C81.0988 83.8602 77.1882 91.8778 70.2869 95.3187C63.3855 98.7596 54.6289 97.0576 45.9854 91.3244C37.3547 85.5997 28.9323 75.9086 22.7935 63.5962C16.6548 51.2837 13.9839 38.725 14.606 28.3871C15.229 18.0337 19.1396 10.016 26.041 6.57516C32.9423 3.13427 41.6989 4.83629 50.3425 10.5695C58.9731 16.2942 67.3956 25.9853 73.5343 38.2977Z"
-              fill="#FC6F09"
-              stroke="black"
-            />
-            <path
-              d="M69.1927 40.7573C75.2069 52.82 78.0853 64.9926 77.8974 74.9082C77.709 84.851 74.4506 92.3774 68.3689 95.4096C62.2872 98.4418 54.3154 96.5146 46.2614 90.6814C38.2293 84.864 30.24 75.2396 24.2258 63.177C18.2116 51.1143 15.3333 38.9417 15.5211 29.026C15.7095 19.0833 18.9679 11.5569 25.0496 8.52466C31.1313 5.49243 39.1032 7.41966 47.1572 13.2529C55.1892 19.0702 63.1785 28.6946 69.1927 40.7573Z"
-              fill="#FC6F09"
-              stroke="black"
-            />
-            <path
-              d="M65.4877 43.8432C71.2991 55.4992 74.3591 67.122 74.6261 76.478C74.8945 85.8801 72.3478 92.7925 67.2015 95.3583C62.0553 97.9241 55.0022 95.798 47.6549 89.9254C40.3435 84.0815 32.9026 74.643 27.0912 62.987C21.2798 51.3311 18.2198 39.7083 17.9528 30.3522C17.6844 20.9502 20.2311 14.0377 25.3773 11.4719C30.5236 8.90609 37.5767 11.0322 44.924 16.9049C52.2354 22.7487 59.6762 32.1873 65.4877 43.8432Z"
-              fill="white"
-              stroke="black"
-            />
-            <g style="mix-blend-mode: soft-light" opacity="0.9" filter="url(#filter0_f_0_1)">
-              <ellipse cx="50" cy="51.5" rx="46" ry="47.5" fill="#FC6F09" />
-            </g>
-            <defs>
-              <filter
-                id="filter0_f_0_1"
-                x="0"
-                y="0"
-                width="100"
-                height="103"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
-              >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_0_1" />
-              </filter>
-            </defs>
-          </svg>
-          <svg
-            class="absolute top-0 left-0 self-center invisible w-8 h-8 aspect-square fill-transparent dark:fill-white group-hover:visible"
-            width="125"
-            height="125"
-            viewBox="13 10 100 103"
-          >
-            <rect width="125" height="125" class="dark:fill-transparent"/>
-            <ellipse cx="63" cy="61.5" rx="46" ry="47.5" stroke="#2B2B2C" />
-            <path
-              d="M83.8006 49.815C89.9314 62.1115 92.7443 74.581 92.3575 84.7876C91.9698 95.0154 88.3834 102.843 81.8665 106.092C75.3495 109.341 66.9401 107.495 58.5385 101.649C50.1543 95.8155 41.8886 86.0647 35.7578 73.7682C29.6271 61.4718 26.8141 49.0023 27.201 38.7957C27.5886 28.5678 31.175 20.7406 37.6919 17.4914C44.2089 14.2422 52.6183 16.0885 61.0199 21.9342C69.4041 27.7677 77.6698 37.5186 83.8006 49.815Z"
-              fill="#FC6F09"
-              stroke="black"
-            />
-            <path
-              d="M86.5343 48.2977C92.6731 60.6102 95.344 73.1689 94.7219 83.5068C94.0988 93.8602 90.1882 101.878 83.2869 105.319C76.3855 108.76 67.6289 107.058 58.9854 101.324C50.3547 95.5997 41.9323 85.9086 35.7935 73.5962C29.6548 61.2837 26.9839 48.725 27.606 38.3871C28.229 28.0337 32.1396 20.016 39.041 16.5752C45.9423 13.1343 54.6989 14.8363 63.3425 20.5695C71.9731 26.2942 80.3956 35.9853 86.5343 48.2977Z"
-              fill="#FC6F09"
-              stroke="black"
-            />
-            <path
-              d="M82.1927 50.7573C88.2069 62.82 91.0853 74.9926 90.8974 84.9082C90.709 94.851 87.4506 102.377 81.3689 105.41C75.2872 108.442 67.3154 106.515 59.2614 100.681C51.2293 94.864 43.24 85.2396 37.2258 73.177C31.2116 61.1143 28.3333 48.9417 28.5211 39.026C28.7095 29.0833 31.9679 21.5569 38.0496 18.5247C44.1313 15.4924 52.1032 17.4197 60.1572 23.2529C68.1892 29.0702 76.1785 38.6946 82.1927 50.7573Z"
-              fill="#FC6F09"
-              stroke="black"
-            />
-            <path
-              d="M78.4877 53.8432C84.2991 65.4992 87.3591 77.122 87.6261 86.478C87.8945 95.8801 85.3478 102.792 80.2015 105.358C75.0553 107.924 68.0022 105.798 60.6549 99.9254C53.3435 94.0815 45.9026 84.643 40.0912 72.987C34.2798 61.3311 31.2198 49.7083 30.9528 40.3522C30.6844 30.9502 33.2311 24.0377 38.3773 21.4719C43.5236 18.9061 50.5767 21.0322 57.924 26.9049C65.2354 32.7487 72.6762 42.1873 78.4877 53.8432Z"
-              fill="white"
-              stroke="black"
-            />
-            <g style="mix-blend-mode: soft-light" opacity="0.9" filter="url(#filter0_f_0_1)">
-              <ellipse cx="63" cy="61.5" rx="46" ry="47.5" fill="#FC6F09" />
-            </g>
-            <g style="mix-blend-mode: lighten" filter="url(#filter1_f_0_1)">
-              <circle cx="62.5" cy="62.5" r="30.5" fill="#FC0909" />
-            </g>
-            <g style="mix-blend-mode: darken" filter="url(#filter2_f_0_1)">
-              <circle cx="59" cy="63" r="18" fill="#FC0909" />
-            </g>
-            <defs>
-              <filter
-                id="filter0_f_0_1"
-                x="13"
-                y="10"
-                width="100"
-                height="103"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
-              >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_0_1" />
-              </filter>
-              <filter
-                id="filter1_f_0_1"
-                x="0"
-                y="0"
-                width="100"
-                height="103"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
-              >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                <feGaussianBlur stdDeviation="16" result="effect1_foregroundBlur_0_1" />
-              </filter>
-              <filter
-                id="filter2_f_0_1"
-                x="25"
-                y="29"
-                width="68"
-                height="68"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
-              >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                <feGaussianBlur stdDeviation="8" result="effect1_foregroundBlur_0_1" />
-              </filter>
-            </defs>
-          </svg>
-        </span>
-        <span class="hidden font-serif text-xl italic font-semibold sm:inline-block">{{ config.title | lower }}
-        </span>
-      </a>
-      <nav class="flex flex-row flex-wrap justify-end gap-6 grow">
-        {%- for menu_link in config.extra.menu_links -%} {% set link_url = menu_link.url | replace(from="$BASE_URL", to=config.base_url) %}
-        <a class="font-semibold text-md" href="{{ link_url | safe }}">{{ menu_link.name }}</a>
-        {%- endfor %}
-      </nav>
-      <div class="flex flex-row gap-6">
-        <input type="checkbox" name="" id="dark-mode-toggle" class="hidden" />
-        <label for="dark-mode-toggle" class="cursor-pointer">
-          <span class="dark:hidden">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="self-center w-7 h-7"
-            >
-              <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-black dark:stroke-white"></path>
-              <path
-                d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
-                class="stroke-black dark:stroke-white"
-              ></path>
-            </svg>
-          </span>
-          <span class="hidden dark:inline">
-            <svg viewBox="0 0 24 24" class="self-center w-6 h-6 fill-black dark:fill-white">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
-                class="fill-transparent"
-              ></path>
-              <path
-                d="m17.715 15.15.95.316a1 1 0 0 0-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 0 0-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 0 1-2.72.718v2a7.47 7.47 0 0 0 3.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 0 1 9 9.5H7a7.5 7.5 0 0 0 7.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 0 0 7 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
-                class="stroke-black dark:stroke-white"
-              ></path>
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z"
-                class="stroke-black dark:stroke-white"
-              ></path>
-            </svg>
-          </span>
-        </label>
-        <svg viewBox="0 0 16 16" class="self-center w-6 h-6" fill="currentColor" aria-hidden="true">
-          <path
-            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-          ></path>
-        </svg>
-      </div>
-    </header>
-
-    <hr class="border-double border-y-4 border-primary-700 dark:border-primary-600" />
-
-    <section class="w-11/12 px-4 pt-4 mx-auto space-y-4">
-      {% block content %}{% endblock content %}
-    </section>
-
-    <footer class="text-right sm:text-center md:text-left lg:text-right xl:text-center text-s">
-      &copy; {{ config.title }} {{ now() | date(format="%Y") }}
-    </footer>
   </body>
 </html>
