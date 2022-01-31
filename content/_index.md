@@ -11,12 +11,19 @@ aliases = []
 generate_feed = true
 +++
 
-## Hey! I'm Sujith Sudarshan. Welcome!
+## Welcome to my Remembrall!
 
-Being a potter-head, this site is designed with magic. Don't believe me, hover over the logo.
+This site is designed with **magic**. If you don't believe me, mouse over (long-tap for those who don't have mice) the Remembrall.
 
-This is my remembrall, a place where I write my thoughts and designs before I forget them causing my remembrall to glow red.
+This is my Remembrall[^1], where I write my thoughts and designs before I forget them.
 
-Click on the link `blog` to see what I've written, I write about life, tech, design and all sorts of muggle-verse things.
+Visit my ***blog*** to see what I've written. I write about life, tech, design - all sorts of muggle-verse things.
 
-Click on the link `about` to know more about me and if you want to get in touch.
+Look at ***about*** to know more about me and if you want to get in touch.
+
+#### P.S.
+<span id="#1"></span>
+> A Remembrall is a glass ball the size of a large marble that reminds its owner if he or she has forgotten something. It is full of white smoke, which turns scarlet if the person who is holding it has forgotten something. ~ [pottermore](https://pottermore.fandom.com/wiki/Remembrall)
+
+#### P.P.S.
+If you are a fellow potter-head and you haven't registered on [wizarding world](https://www.wizardingworld.com/). Definitely check it out!

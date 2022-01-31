@@ -2,19 +2,19 @@
 {% block content %}
 {% for year, posts in section.pages | group_by(attribute="year") %}
 <div class="font-medium">
-  <h2 class="pl-4 font-mono underline decoration-3 decoration-wavy decoration-secondary-500 dark:decoration-secondary-600/95">{{ year }}</h2>
+  <h2 class="py-1">{{ year }}</h2>
   <div class="flex flex-row">
-    <div class="ml-6 border-l-2 border-dotted border-secondary-500 dark:border-secondary-600/95"></div>
+    <div class="w-8 border-r-2 border-dotted border-secondary-500 dark:border-secondary-600"></div>
     <ul class="flex flex-col flex-grow mt-2 space-y-2">
       {% for post in posts %}
-      <li class="flex flex-col space-y-2">
-        <div class="flex flex-row justify-between gap-4 -ml-7 text-md">
-          <span class="flex-none font-mono text-sm bg-transparent-500/50">{{ post.date | date(format='%b-%d') }}</span>
-          <a class="flex-auto hover:underline text-primary-600 dark:text-primary-500 hover:text-primary-700" href="{{ post.permalink | safe }}">{{ post.title }}</a>
-          <a class="flex-none place-self-end group-hover:underline" href="{{ post.permalink | safe }}">👈</a>
+      <li class="flex flex-col px-2 space-y-2">
+        <div class="flex flex-row justify-between gap-4 text-md">
+          <span class="flex-none -ml-16 font-mono text-sm">{{ post.date | date(format='%b-%d') }}</span>
+          <a class="flex-auto text-primary-600 dark:text-primary-500" href="{{ post.permalink | safe }}">{{ post.title }}</a>
+          <a class="flex-none place-self-end" href="{{ post.permalink | safe }}">👈</a>
         </div>
         <div class="flex flex-row justify-between text-xs italic text-neutral-700 dark:text-neutral-300">
-          <span class="flex-auto indent-2"> {{ post.description | safe }} </span>
+          <span class="flex-auto"> {{ post.description | safe }} </span>
           <span class="flex-none align-text-bottom">{{ post.reading_time }} min read</span>
         </div>
       </li>

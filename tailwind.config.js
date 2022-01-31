@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: {
@@ -16,6 +17,16 @@ module.exports = {
       neutral: colors.neutral,
     },
     extend: {
+      fontFamily: {
+        sans: [
+          'Noto Sans',
+          ...defaultTheme.fontFamily.sans,
+        ],
+        serif: [
+          'Noto Serif',
+          ...defaultTheme.fontFamily.sans,
+        ],
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -41,10 +52,8 @@ module.exports = {
       },
       animation: {
         smoke: 'smoke 2s linear infinite',
-      }
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/typography')],
 }
