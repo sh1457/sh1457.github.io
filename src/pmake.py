@@ -58,7 +58,7 @@ def tailwind(*args, **kwargs) -> None:
 
 def zola(drafts: bool=False, *args, **kwargs) -> None:
     """Serve zola process"""
-    cmd = shlex.split('zola serve --interface 127.0.0.1 --base-url 127.0.0.1 --open')
+    cmd = shlex.split('zola serve --open')
     cmd[0] = f'"{shutil.which(cmd[0])}"'
 
     if drafts:

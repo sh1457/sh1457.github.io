@@ -14,7 +14,7 @@ setuptools.setup(
     package_dir={'': 'src'},
     py_modules=['pmake'],
     entry_points={
-        'console_scripts': ["make=pmake:make"],
+        'console_scripts': ["pmake=pmake:make"],
     },
     install_requires=['click'],
     extras_require={},

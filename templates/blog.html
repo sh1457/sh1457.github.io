@@ -12,7 +12,7 @@
         <div class="flex flex-row justify-between flex-initial gap-4">
           <span class="self-center -ml-16 font-mono text-sm font-medium text-neutral-700 dark:text-neutral-300">{{ post.date | date(format='%b-%d') }}</span>
           <a class="flex-auto w-1 overflow-hidden font-medium truncate text-md text-primary-600 dark:text-primary-500 text-ellipsis whitespace-nowrap" href="{{ post.permalink | safe }}">{{ post.title }}</a>
-          <a class="font-medium text-md place-self-end" href="{{ post.permalink | safe }}">👈</a>
+          <a class="font-medium text-md place-self-end" href="{{ post.permalink | safe }}"><<</a>
         </div>
         <div class="flex flex-row justify-between gap-2">
           <span class="flex-auto w-1 text-xs font-medium truncate text-ellipsis whitespace-nowrap">{{ post.description | safe }}</span>

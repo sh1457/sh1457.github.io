@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.12 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -983,12 +983,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   aspect-ratio: 16 / 9;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .h-8 {
   height: 2rem;
 }
 
 .h-7 {
   height: 1.75rem;
+}
+
+.h-12 {
+  height: 3rem;
+}
+
+.w-20 {
+  width: 5rem;
 }
 
 .w-8 {
@@ -1013,6 +1025,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-full {
   width: 100%;
+}
+
+.w-64 {
+  width: 16rem;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .flex-initial {
@@ -1048,8 +1068,69 @@ Ensure the default browser behavior of the `hidden` attribute.
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.scale-125 {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-100 {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@-webkit-keyframes smoke {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0.9);
+  }
+
+  25% {
+    transform: translate(5, 5) rotate(90deg) scale(0.75);
+  }
+
+  50% {
+    transform: translate(0, 0) rotate(180deg) scale(0.8);
+  }
+
+  75% {
+    transform: translate(5, 5) rotate(270deg) scale(0.75);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(0.9);
+  }
+}
+
+@keyframes smoke {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0.9);
+  }
+
+  25% {
+    transform: translate(5, 5) rotate(90deg) scale(0.75);
+  }
+
+  50% {
+    transform: translate(0, 0) rotate(180deg) scale(0.8);
+  }
+
+  75% {
+    transform: translate(5, 5) rotate(270deg) scale(0.75);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(0.9);
+  }
+}
+
+.animate-smoke {
+  -webkit-animation: smoke 2s linear infinite;
+          animation: smoke 2s linear infinite;
 }
 
 .cursor-pointer {
@@ -1145,6 +1226,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.5rem;
 }
 
+.border-2 {
+  border-width: 2px;
+}
+
 .border-y-4 {
   border-top-width: 4px;
   border-bottom-width: 4px;
@@ -1169,6 +1254,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-secondary-500 {
   --tw-border-opacity: 1;
   border-color: rgb(249 115 22 / var(--tw-border-opacity));
+}
+
+.border-secondary-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(234 88 12 / var(--tw-border-opacity));
+}
+
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-secondary-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(254 215 170 / var(--tw-border-opacity));
 }
 
 .border-y-secondary-600 {
@@ -1343,6 +1443,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 150ms;
 }
 
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-300 {
   transition-duration: 300ms;
 }
@@ -1360,28 +1466,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-scale-x: 1.25;
   --tw-scale-y: 1.25;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-@-webkit-keyframes smoke {
-  0% {
-    transform: translate(0, 0) rotate(0deg) scale(0.9);
-  }
-
-  25% {
-    transform: translate(5, 5) rotate(90deg) scale(0.75);
-  }
-
-  50% {
-    transform: translate(0, 0) rotate(180deg) scale(0.8);
-  }
-
-  75% {
-    transform: translate(5, 5) rotate(270deg) scale(0.75);
-  }
-
-  100% {
-    transform: translate(0, 0) rotate(360deg) scale(0.9);
-  }
 }
 
 @keyframes smoke {
@@ -1409,6 +1493,82 @@ Ensure the default browser behavior of the `hidden` attribute.
 .group:hover .group-hover\:animate-smoke {
   -webkit-animation: smoke 2s linear infinite;
           animation: smoke 2s linear infinite;
+}
+
+@keyframes smoke {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0.9);
+  }
+
+  25% {
+    transform: translate(5, 5) rotate(90deg) scale(0.75);
+  }
+
+  50% {
+    transform: translate(0, 0) rotate(180deg) scale(0.8);
+  }
+
+  75% {
+    transform: translate(5, 5) rotate(270deg) scale(0.75);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(0.9);
+  }
+}
+
+.group:focus .group-focus\:animate-smoke {
+  -webkit-animation: smoke 2s linear infinite;
+          animation: smoke 2s linear infinite;
+}
+
+.peer:checked ~ .peer-checked\:scale-125 {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.peer:checked ~ .peer-checked\:scale-100 {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@keyframes smoke {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0.9);
+  }
+
+  25% {
+    transform: translate(5, 5) rotate(90deg) scale(0.75);
+  }
+
+  50% {
+    transform: translate(0, 0) rotate(180deg) scale(0.8);
+  }
+
+  75% {
+    transform: translate(5, 5) rotate(270deg) scale(0.75);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(0.9);
+  }
+}
+
+.peer:checked ~ .peer-checked\:animate-smoke {
+  -webkit-animation: smoke 2s linear infinite;
+          animation: smoke 2s linear infinite;
+}
+
+.peer:checked ~ .peer-checked\:border-primary-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(254 205 211 / var(--tw-border-opacity));
+}
+
+.peer:checked ~ .peer-checked\:bg-secondary-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 88 12 / var(--tw-bg-opacity));
 }
 
 @media (prefers-reduced-motion: reduce) {
