@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>My Remembrall - aoc</title>
+	<subtitle>Personal website and blog</subtitle>
+	<link href="https://sh1457.github.io/tags/aoc/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://sh1457.github.io"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2022-01-06T00:00:00+00:00</updated>
+	<id>https://sh1457.github.io/tags/aoc/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Advent of Code &#x2F; 2021 &#x2F; Day 1</title>
+		<published>2021-12-06T00:00:00+00:00</published>
+		<updated>2022-01-06T00:00:00+00:00</updated>
+		<link href="https://sh1457.github.io/blog/aoc-2021-day1/" type="text/html"/>
+		<id>https://sh1457.github.io/blog/aoc-2021-day1/</id>
+		<content type="html">&lt;p&gt;Let&#x27;s solve &lt;a href=&quot;https:&#x2F;&#x2F;adventofcode.com&#x2F;2021&#x2F;day&#x2F;1&quot;&gt;day 1&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;part-1&quot;&gt;Part 1&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;problem&quot;&gt;Problem&lt;&#x2F;h4&gt;
+&lt;p&gt;The input is a list of integers. The result is the number of sequence pairs that are increasing.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;crux&quot;&gt;Crux&lt;&#x2F;h4&gt;
+&lt;p&gt;The idea here is to keep track of the number of increasing sequential numbers. Using &lt;code&gt;zip&lt;&#x2F;code&gt; we can iterate simultaneously through the list slices, one from the start till the penultimate element and the other from the second element till the end. Then we just need to check if the element is greater than it&#x27;s previous element to increment a counter.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;solution&quot;&gt;Solution&lt;&#x2F;h4&gt;
+&lt;pre data-lang=&quot;py&quot; style=&quot;background-color:#191919;color:#f8f8f2;&quot; class=&quot;language-py &quot;&gt;&lt;code class=&quot;language-py&quot; data-lang=&quot;py&quot;&gt;&lt;span style=&quot;font-style:italic;color:#ff5e5e;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8cdaff;&quot;&gt;solution1&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fc9354;&quot;&gt;inputs&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt;list&lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;]) -&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    counter &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdb082;&quot;&gt;0
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span&gt;elem, prev &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;zip&lt;&#x2F;span&gt;&lt;span&gt;(inputs[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdb082;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;:], inputs[:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdb082;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;]):
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;elem &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span&gt;prev:
+&lt;&#x2F;span&gt;&lt;span&gt;            counter &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;+= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdb082;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span&gt;counter
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;part-2&quot;&gt;Part 2&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;problem-1&quot;&gt;Problem&lt;&#x2F;h4&gt;
+&lt;p&gt;The problem is almost the same except we need to consider 3 elements summed and the next 3 elements. This combination of sequential elements is a window. In this case a window of size 3. The task is simplified since we only need the sum of the window.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;crux-1&quot;&gt;Crux&lt;&#x2F;h4&gt;
+&lt;p&gt;The main idea is to define the windows. The rest of the solution works on the windows instead.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;solution-1&quot;&gt;Solution&lt;&#x2F;h4&gt;
+&lt;pre data-lang=&quot;py&quot; style=&quot;background-color:#191919;color:#f8f8f2;&quot; class=&quot;language-py &quot;&gt;&lt;code class=&quot;language-py&quot; data-lang=&quot;py&quot;&gt;&lt;span style=&quot;font-style:italic;color:#ff5e5e;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8cdaff;&quot;&gt;solution2&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fc9354;&quot;&gt;inputs&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt;list&lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;]) -&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    window_size &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdb082;&quot;&gt;3
+&lt;&#x2F;span&gt;&lt;span&gt;    final_window_index &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;len&lt;&#x2F;span&gt;&lt;span&gt;(inputs) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;- &lt;&#x2F;span&gt;&lt;span&gt;window_size &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdb082;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    windows &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;sum&lt;&#x2F;span&gt;&lt;span&gt;(inputs[i:i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span&gt;window_size])
+&lt;&#x2F;span&gt;&lt;span&gt;               &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span&gt;i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;range&lt;&#x2F;span&gt;&lt;span&gt;(final_window_index)]
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#e9fdac;&quot;&gt;solution1&lt;&#x2F;span&gt;&lt;span&gt;(windows)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Advent of Code</title>
+		<published>2021-12-05T00:00:00+00:00</published>
+		<updated>2022-01-06T00:00:00+00:00</updated>
+		<link href="https://sh1457.github.io/blog/advent-of-code/" type="text/html"/>
+		<id>https://sh1457.github.io/blog/advent-of-code/</id>
+		<content type="html">&lt;p&gt;I&#x27;ve known about &lt;a href=&quot;https:&#x2F;&#x2F;adventofcode.com&quot;&gt;Advent of Code&lt;&#x2F;a&gt; for a around 3 years now. I try to solve it but somehow lose steam partway through. Mostly because it&#x27;s december and the holiday season is ripe with distractions and other plans.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
+&lt;p&gt;Here&#x27;s what it is for the uninitiated (&lt;em&gt;ripped straight from their about page&lt;&#x2F;em&gt;):&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hi! I&#x27;m Eric Wastl. I make Advent of Code. I hope you like it! I also made Vanilla JS, PHP Sadness, and lots of other things. You can find me on Twitter and GitHub.&lt;&#x2F;p&gt;
+&lt;p&gt;Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like. People use them as a speed contest, interview prep, company training, university coursework, practice problems, or to challenge each other.&lt;&#x2F;p&gt;
+&lt;p&gt;You don&#x27;t need a computer science background to participate - just a little programming knowledge and some problem solving skills will get you pretty far. Nor do you need a fancy computer; every problem has a solution that completes in at most 15 seconds on ten-year-old hardware.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;I mostly solve these kinds of challenges with &lt;a href=&quot;https:&#x2F;&#x2F;www.python.org&quot;&gt;python&lt;&#x2F;a&gt;. Python is an interpreted language but is able to express intuitive and readable solutions. I do plan to try at least one or more compiled language as well as a challenge to myself. But it has been many years since I dealt with low level memory management and pointers. But nonetheless &lt;a href=&quot;https:&#x2F;&#x2F;ziglang.org&quot;&gt;zig&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.rust-lang.org&quot;&gt;rust&lt;&#x2F;a&gt; &lt;a href=&quot;https:&#x2F;&#x2F;go.dev&quot;&gt;go&lt;&#x2F;a&gt; seem very promising.&lt;&#x2F;p&gt;
+&lt;p&gt;Over the years, I built a toolchain to effectively organize and solve such programming challenges. I have certain helpers to quickly debug&#x2F;test solutions.&lt;&#x2F;p&gt;
+&lt;p&gt;Advent of Code is different in the sense that you are provided a unique input set and simply need to provide the result to that given input set. Hence we can be a bit more relaxed about the solution time constraints. Although as mentioned by the creator there is always a solution that will complete in under 15s even on older hardware. The problems are designed in such a way that only solutions with the right time complexity can provide an answer in reasonable time, especially in the later stage.&lt;&#x2F;p&gt;
+&lt;p&gt;Some useful helper functions are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;a function that takes in the solution function, [list of] input and [list of] expected output and returns [list of] result&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre data-lang=&quot;py&quot; style=&quot;background-color:#191919;color:#f8f8f2;&quot; class=&quot;language-py &quot;&gt;&lt;code class=&quot;language-py&quot; data-lang=&quot;py&quot;&gt;&lt;span style=&quot;font-style:italic;color:#ff5e5e;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8cdaff;&quot;&gt;solve&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fc9354;&quot;&gt;function&lt;&#x2F;span&gt;&lt;span&gt;: Callable,
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fc9354;&quot;&gt;inputs&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt;list&lt;&#x2F;span&gt;&lt;span&gt;[Any],
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fc9354;&quot;&gt;expected_outputs&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt;list&lt;&#x2F;span&gt;&lt;span&gt;[Any]) -&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt;list&lt;&#x2F;span&gt;&lt;span&gt;[Any]:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span&gt;inp, exp_out &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;zip&lt;&#x2F;span&gt;&lt;span&gt;(inputs, expected_outputs):
+&lt;&#x2F;span&gt;&lt;span&gt;        out &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#e9fdac;&quot;&gt;function&lt;&#x2F;span&gt;&lt;span&gt;(inp)
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;assert &lt;&#x2F;span&gt;&lt;span&gt;out &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span&gt;exp_out, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffffff;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt;Failed!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffffff;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;a function that times the solution function&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre data-lang=&quot;py&quot; style=&quot;background-color:#191919;color:#f8f8f2;&quot; class=&quot;language-py &quot;&gt;&lt;code class=&quot;language-py&quot; data-lang=&quot;py&quot;&gt;&lt;span style=&quot;font-style:italic;color:#ff5e5e;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8cdaff;&quot;&gt;log_time&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fc9354;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;: Callable) -&amp;gt; Callable:
+&lt;&#x2F;span&gt;&lt;span&gt;    @&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e9fdac;&quot;&gt;wraps&lt;&#x2F;span&gt;&lt;span&gt;(func)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#ff5e5e;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8cdaff;&quot;&gt;wrapper&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fc9354;&quot;&gt;args&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;**&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fc9354;&quot;&gt;kwargs&lt;&#x2F;span&gt;&lt;span&gt;):
+&lt;&#x2F;span&gt;&lt;span&gt;        start_time &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;time.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e9fdac;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;        result &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#e9fdac;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;args, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;**&lt;&#x2F;span&gt;&lt;span&gt;kwargs)
+&lt;&#x2F;span&gt;&lt;span&gt;        end_time &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;time.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e9fdac;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        duration &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;end_time &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;- &lt;&#x2F;span&gt;&lt;span&gt;start_time
+&lt;&#x2F;span&gt;&lt;span&gt;        msg &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fbdfb5;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffffff;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt;Function &lt;&#x2F;span&gt;&lt;span&gt;{func.__name__&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;!r&lt;&#x2F;span&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt; executed&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffffff;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;               &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fbdfb5;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffffff;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt; in &lt;&#x2F;span&gt;&lt;span&gt;{duration&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdb082;&quot;&gt;:.4f&lt;&#x2F;span&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fbe3bf;&quot;&gt;s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffffff;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span&gt;(msg)
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span&gt;result
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff5e5e;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span&gt;wrapper
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;a function that profiles the solution function&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I have not yet implemented such a function. While I have used the profiler present in the standard library &lt;code&gt;cprofile&lt;&#x2F;code&gt;, I have yet to use it extensively in the context of programming challenges. Most of my approach depends on estimating the time complexity and optimizing the solution (almost using only the standard library). Very rarely would I need to run a profiler to see where the slowness is coming from.&lt;&#x2F;p&gt;
+&lt;p&gt;These are solution independent and usable across challenges. Many end up creating a similar toolchain.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

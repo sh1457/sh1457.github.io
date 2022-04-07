@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>My Remembrall - remembrall</title>
+	<subtitle>Personal website and blog</subtitle>
+	<link href="https://sh1457.github.io/tags/remembrall/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://sh1457.github.io"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2022-01-06T00:00:00+00:00</updated>
+	<id>https://sh1457.github.io/tags/remembrall/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Building static websites</title>
+		<published>2021-06-18T00:00:00+00:00</published>
+		<updated>2022-01-06T00:00:00+00:00</updated>
+		<link href="https://sh1457.github.io/blog/building-my-remembrall/introduction/" type="text/html"/>
+		<id>https://sh1457.github.io/blog/building-my-remembrall/introduction/</id>
+		<content type="html">&lt;p&gt;A static website is collection of content that does not change and can be served completely to the client. Such websites are easy to download for offline browsing.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
+&lt;p&gt;Examples of such sites are documentation, small websites, blogs, book as a website. These sites have little to no dynamic content - content that changes at a rate where a server would be required to serve it.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;static-website-generators&quot;&gt;Static website generators&lt;&#x2F;h4&gt;
+&lt;p&gt;Static website generators are tools that build static websites. There are many tools nowadays implemented in various languages both interpreted and compiled. Building static websites is not a critical task in the view of the user. That&#x27;s why tool performance is not the main criteria for choosing the right tool. But nonetheless the authors&#x2F;creators would appreciate fast builds and deploys.&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th align=&quot;center&quot;&gt;Tool&lt;&#x2F;th&gt;&lt;th align=&quot;center&quot;&gt;Lang&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Jekyll&lt;&#x2F;td&gt;&lt;td align=&quot;center&quot;&gt;ruby&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Hugo&lt;&#x2F;td&gt;&lt;td align=&quot;center&quot;&gt;go&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Zola&lt;&#x2F;td&gt;&lt;td align=&quot;center&quot;&gt;rust&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Pelican&lt;&#x2F;td&gt;&lt;td align=&quot;center&quot;&gt;python&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;But at the heart each tool provides configuration to create flexible site structures. The tools aim to separate the content from the styling. Content can be created in the form of text documents in markdown formats for example.&lt;&#x2F;p&gt;
+&lt;p&gt;The have similar mechanics.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Initialize the tool
+&lt;ul&gt;
+&lt;li&gt;create a skeleton folder structure&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Build templates&lt;&#x2F;li&gt;
+&lt;li&gt;Write content&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Then there is a build process, the tool takes the content and templates and binds them together to form the resultant HTML file. This file can then be opened on the browser or served on a web server to be available on the internet.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; is a fantastic static site generator which provides a lot of flexibility in developing and organizing websites. It&#x27;s built in rust and uses the tera template language. After creating templates, it makes it real easy to focus on content in markdown.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tailwindcss.com&#x2F;&quot;&gt;Tailwind&lt;&#x2F;a&gt; is a utilitarian css framework that&#x27;s been taking over the internet recently. The fact that any&#x2F;most requirements can be satisfied with their pre-built classes is amazing. Makes it even better that the css is now maintained in the html. No need to have multiple tabs to web design ever again.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

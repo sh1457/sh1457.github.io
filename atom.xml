@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>My Remembrall - Homepage</title>
+	<subtitle>Personal website and blog</subtitle>
+	<link href="https://sh1457.github.io/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://sh1457.github.io/"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2022-01-31T00:00:00+00:00</updated>
+	<id>https://sh1457.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>About me</title>
+		<published>2021-12-01T00:00:00+00:00</published>
+		<updated>2022-01-31T00:00:00+00:00</updated>
+		<link href="https://sh1457.github.io/about/" type="text/html"/>
+		<id>https://sh1457.github.io/about/</id>
+		<content type="html">&lt;h2 id=&quot;hello-i-m-sujith-sudarshan&quot;&gt;Hello! I&#x27;m Sujith Sudarshan&lt;&#x2F;h2&gt;
+&lt;p&gt;I&#x27;m interested in Data, Design, Dilemmas. I design data-driven solutions as a technology consultant. My interests are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;python,&lt;&#x2F;li&gt;
+&lt;li&gt;zig,&lt;&#x2F;li&gt;
+&lt;li&gt;game design,&lt;&#x2F;li&gt;
+&lt;li&gt;data visualization&lt;&#x2F;li&gt;
+&lt;li&gt;performance optimization.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I like problem-solving and plan to use this blog to showcase it. This blog will contain a slice of everything from:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;dev-logs,&lt;&#x2F;li&gt;
+&lt;li&gt;travel-logs,&lt;&#x2F;li&gt;
+&lt;li&gt;how-tos,&lt;&#x2F;li&gt;
+&lt;li&gt;reviews,&lt;&#x2F;li&gt;
+&lt;li&gt;and my thoughts.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Take a look at my work and reach out if you&#x27;d like to collaborate!&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;projects&quot;&gt;Projects&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sh1457&#x2F;sh1457.github.io&quot;&gt;sh1457.github.io&lt;&#x2F;a&gt; This website&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sh1457&#x2F;advent-of-code&quot;&gt;advent-of-code&lt;&#x2F;a&gt; Collection of my advent of code solutions&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sh1457&#x2F;dobby&quot;&gt;dobby&lt;&#x2F;a&gt; Collection of my scripts to scrape, generate and animate data for publishing&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sh1457&#x2F;measure-me-bot&quot;&gt;measure-me-bot&lt;&#x2F;a&gt; A telegram bot to self-assess physical and mental state&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;credits&quot;&gt;Credits&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;shalzz&#x2F;zola-deploy-action&quot;&gt;github.com&#x2F;shalzz&#x2F;zola-deploy-action&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Powered by &lt;a href=&quot;https:&#x2F;&#x2F;getzola.org&quot;&gt;zola&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Powered by &lt;a href=&quot;https:&#x2F;&#x2F;tailwindcss.com&#x2F;&quot;&gt;tailwindcss&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;The products&#x2F;characters&#x2F;concepts depicted from the Harry Potter universe are © by J.K. Rowling &amp;amp; Warner Bros.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;social-media&quot;&gt;Social media&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sh1457&quot;&gt;Github&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.instagram.com&#x2F;sujith__sudarshan&#x2F;&quot;&gt;Instagram&lt;&#x2F;a&gt; &amp;lt;-- Most active social&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;sh1457&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
+</feed>
