@@ -2,7 +2,7 @@ import setuptools
 
 
 setuptools.setup(
-    name='dobby',
+    name='pmake',
     version='0.1.0',
     description='Custom scripts to build zola+tailwind site',
     long_description='Custom scripts to build zola+tailwind site',
@@ -12,10 +12,9 @@ setuptools.setup(
     python_requires='>=3.6.0',
     url='https://github.com/sh1457/sh1457.github.io',
     package_dir={'': 'src'},
-    packages=setuptools.find_packages(where='src'),
+    py_modules=['pmake'],
     entry_points={
-        'console_scripts': ["pmake=dobby.__main__:pmake",
-                            "tests=dobby.__main__:tests"],
+        'console_scripts': ["pmake=pmake:make"],
     },
     install_requires=['click'],
     extras_require={},

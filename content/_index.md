@@ -11,41 +11,19 @@ aliases = []
 generate_feed = true
 +++
 
-## Hello! I'm Sujith Sudarshan.
+## Welcome to my Remembrall!
 
-I'm interested in **D**ata, **D**esign and **D**ilemnas.
+This site is designed with **magic**. If you don't believe me, mouse over (long-tap for those who don't have mice) the Remembrall.
 
-I'm currently working as a technology consultant. My work involves designing data driven solutions. I have been
-interested in reading about python, zig, game design, performance optimization.
+This is my Remembrall[^1], where I write my thoughts and designs before I forget them.
 
-Ever since I met my first computer at 9, I felt that technology and making things with it was fun. That's when I knew
-that the future requires us to use technology to make our lives better.
+Visit my ***blog*** to see what I've written. I write about life, tech, design - all sorts of muggle-verse things.
 
-Take a look at my work below to see what I'm working on, and get in touch if you'd like to work together!
+Look at ***about*** to know more about me and if you want to get in touch.
 
-### Projects
+#### P.S.
+<span id="#1"></span>
+> A Remembrall is a glass ball the size of a large marble that reminds its owner if he or she has forgotten something. It is full of white smoke, which turns scarlet if the person who is holding it has forgotten something. ~ [pottermore](https://pottermore.fandom.com/wiki/Remembrall)
 
-#### [measure-me-bot](https://github.com/sh1457/measure-me-bot)
-
-A telegram bot to self-assess physical and mental state
-
-### Credits
-
-- Favicon
-
-[iconarchive.com/artist/anton-gerasimenko](https://iconarchive.com/artist/anton-gerasimenko.html)
-
-> `The products or characters depicted in these icons are © by J.K. Rowling & Warner Bros.`
-
-- GitHub Actions - Zola Deploy Action
-
-[github.com/shalzz/zola-deploy-action](https://github.com/shalzz/zola-deploy-action)
-
-- Powered by [zola](https://getzola.org)
-
-- Powered by [tailwindcss](https://tailwindcss.com/)
-
-- Social media links
-
-  - [Github](https://github.com/sh1457)
-  - [Twitter](https://twitter.com/sh1457)
+#### P.P.S.
+If you are a fellow potter-head and you haven't registered on [wizarding world](https://www.wizardingworld.com/). Definitely check it out!

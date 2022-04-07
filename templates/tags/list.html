@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-lg font-semibold">Tag list</h2>
+<ul class="mt-4 ml-4 space-y-2">
+  {% for term in terms %}
+  <li class="flex flex-col gap-2">
+    <div class="flex flex-row justify-between">
+      <a class="flex text-lg font-semibold text-primary-500 dark:text-primary-600" href="{{ term.permalink | safe }}">
+        {{ term.name }}
+      </a>
+      <span class="self-end text-sm">{{ term.pages | length }} post{{ term.pages | length | pluralize }}</span>
+    </div>
+    <ul class="ml-4 space-y-2 list-inside">
+      {% for page in term.pages %}
+      <li>
+        <a class="text-sm" href="{{ page.permalink | safe }}"> {{ page.title }} </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock content %}

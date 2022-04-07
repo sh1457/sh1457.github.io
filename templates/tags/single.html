@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="font-mono text-lg font-semibold">{{ term.name }}</h2>
+<ul class="ml-1 space-y-2 list-inside">
+{% for page in term.pages %}
+    <li class="flex flex-row justify-between gap-4 px-2 border-l-2 border-secondary-500 dark:border-secondary-600">
+        <span class="self-center flex-none font-mono text-sm">{{ page.date | date(format='%b-%d-%Y') }}</span>
+        <a class="flex-auto text-md text-primary-600 dark:text-primary-500" href="{{ page.permalink | safe }}"> {{ page.title }} </a>
+        <a class="flex-none" href="{{ page.permalink | safe }}">👈</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock content %}

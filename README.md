@@ -59,7 +59,7 @@ Creates the default config `tailwind.config.js` by default
 We are using a custom css file as input to build at `src/tailwind.css` We will be serving the built css file at the
 static folder in zola. `static/css/tailwind.css`
 
-`npx tailwindcss -i src/tailwind.css -o static/css/tailwind.css`
+`npx tailwindcss --input ./src/tailwind.css --output ./static/css/tailwind.css --watch`
 
 ## Deploy
 
